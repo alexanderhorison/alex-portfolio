@@ -477,6 +477,10 @@ html { scroll-behavior: smooth; }
   .axw-wrap    { padding: 0 30px; }
   .axw-h1      { font-size: 46px; }
 }
+/* Two-up grids used inside the contact form and project modal */
+.axw-form2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.axw-mres  { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+
 @media (max-width: 680px) {
   .axw-work    { grid-template-columns: 1fr; }
   .axw-svc     { grid-template-columns: 1fr; }
@@ -484,5 +488,11 @@ html { scroll-behavior: smooth; }
   .axw-stats   { grid-template-columns: repeat(2, 1fr); }
   .axw-h1      { font-size: 38px; }
   .axw-wrap    { padding: 0 20px; }
-  .axw-tnav    { display: none; }
+  .axw-form2   { grid-template-columns: 1fr; }
+  .axw-mres    { grid-template-columns: 1fr; }
+}
+/* Keep section links reachable on small screens; only the CTA button drops away */
+@media (max-width: 520px) {
+  .axw-tcta { display: none; }
+  .axw-tnav { gap: 18px !important; }
 }

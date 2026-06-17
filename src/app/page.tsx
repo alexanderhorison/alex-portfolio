@@ -128,7 +128,7 @@ export default function WebPortfolio() {
               <a className="axw-toplink" href="#about">About</a>
               <a className="axw-toplink" href="#contact">Contact</a>
             </nav>
-            <a className="wa-btn wa-btn--brand wa-btn--sm" href="#contact" style={{ textDecoration: 'none' }}>Let&apos;s talk</a>
+            <a className="wa-btn wa-btn--brand wa-btn--sm axw-tcta" href="#contact" style={{ textDecoration: 'none' }}>Let&apos;s talk</a>
           </div>
         </header>
 
@@ -452,7 +452,7 @@ export default function WebPortfolio() {
                   <>
                     <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 18, letterSpacing: '-0.01em' }}>Send a message</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                      <div className="axw-form2">
                         <div>
                           <label className="wa-label" htmlFor="axw-name">Name</label>
                           <input id="axw-name" className="wa-field wa-input" placeholder="Your name" value={name} onChange={e => setName(e.target.value)} style={{ marginTop: 7 }} />
@@ -565,7 +565,7 @@ export default function WebPortfolio() {
                 </span>
                 <h3 style={{ fontSize: 15, fontWeight: 700, margin: 0 }}>The Results</h3>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
+              <div className="axw-mres">
                 {sel.results.map((r, i) => (
                   <div key={i} className="wa-card" style={{ padding: 14, display: 'flex', gap: 9, alignItems: 'flex-start' }}>
                     <span style={{ color: 'hsl(142 71% 40%)', flexShrink: 0, marginTop: 1 }}>
