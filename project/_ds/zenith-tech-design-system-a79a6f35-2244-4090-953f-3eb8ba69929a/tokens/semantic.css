@@ -1,0 +1,34 @@
+/* ============================================================
+   WA Broadcast — Semantic aliases
+   Friendly names that map intent → base tokens. Prefer these in
+   component CSS so a base-token change ripples everywhere.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --surface-page: hsl(var(--background));
+  --surface-card: hsl(var(--card));
+  --surface-muted: hsl(var(--muted));
+  --surface-popover: hsl(var(--popover));
+  --surface-brand-soft: hsl(var(--brand) / 0.10); /* icon wells, selected tile bg */
+
+  /* Text */
+  --text-heading: hsl(var(--foreground));
+  --text-body: hsl(var(--foreground));
+  --text-muted: hsl(var(--muted-foreground));
+  --text-on-brand: hsl(var(--brand-foreground));
+  --text-on-primary: hsl(var(--primary-foreground));
+  --text-brand: hsl(var(--brand));
+  --text-danger: hsl(var(--destructive));
+
+  /* Lines & focus */
+  --line: hsl(var(--border));
+  --line-input: hsl(var(--input));
+  --focus-ring: hsl(var(--ring));
+
+  /* Interactive */
+  --action-brand: hsl(var(--brand));
+  --action-brand-hover: hsl(var(--brand) / 0.90);
+  --action-brand-press: hsl(var(--brand) / 0.80);
+  --action-primary: hsl(var(--primary));
+  --action-primary-hover: hsl(var(--primary) / 0.90);
+}

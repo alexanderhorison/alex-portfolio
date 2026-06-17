@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/zenith-tech-design-system-a79a6f35-2244-4090-953f-3eb8ba69929a/styles.css">
+<script src="portfolio-data.js"></script>
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:hsl(var(--background));font-family:var(--font-sans);color:hsl(var(--foreground));}
+  ::-webkit-scrollbar{width:10px;height:10px;}::-webkit-scrollbar-thumb{background:hsl(0 0% 80%);border-radius:6px;border:3px solid #fff;}
+  @keyframes axwUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes axwFade{from{opacity:0}to{opacity:1}}
+  @keyframes axwPop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+  @keyframes axwToast{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+  .axw-side{position:fixed;top:0;left:0;bottom:0;width:266px;display:flex;flex-direction:column;border-right:1px solid hsl(var(--border));background:hsl(var(--sidebar-background));padding:28px 22px;z-index:30;}
+  .axw-top{display:none;}
+  .axw-main{margin-left:266px;}
+  .axw-wrap{max-width:1140px;margin:0 auto;padding:0 44px;}
+  .axw-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .axw-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .axw-work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .axw-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .axw-test{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .axw-exp{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .axw-stack{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .axw-stile{transition:background .18s ease,border-color .18s ease;}
+  .axw-contact{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start;}
+  .axw-h1{font-size:58px;line-height:1.02;letter-spacing:-0.035em;}
+  .axw-card{background:hsl(var(--card));border:1px solid hsl(var(--border));border-radius:16px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;cursor:pointer;text-align:left;}
+  .axw-card:hover{border-color:hsl(var(--brand)/.45);transform:translateY(-3px);box-shadow:0 16px 36px -16px rgba(0,0,0,.18);}
+  .axw-navlink{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;font-size:14px;font-weight:500;color:hsl(var(--sidebar-foreground));text-decoration:none;transition:background .15s ease,color .15s ease;cursor:pointer;}
+  .axw-navlink:hover{background:hsl(var(--sidebar-accent));}
+  .axw-toplink{font-size:14px;font-weight:500;color:hsl(var(--muted-foreground));text-decoration:none;transition:color .15s ease;cursor:pointer;}
+  .axw-toplink:hover{color:hsl(var(--foreground));}
+  @media(max-width:1023px){
+    .axw-side{display:none;}
+    .axw-top{display:flex;}
+    .axw-main{margin-left:0;}
+    .axw-hero{grid-template-columns:1fr;gap:32px;}
+    .axw-work{grid-template-columns:repeat(2,1fr);}
+    .axw-exp{grid-template-columns:1fr;}
+    .axw-stack{grid-template-columns:repeat(3,1fr);}
+    .axw-contact{grid-template-columns:1fr;}
+    .axw-wrap{padding:0 30px;}
+    .axw-h1{font-size:46px;}
+  }
+  @media(max-width:680px){
+    .axw-work{grid-template-columns:1fr;}
+    .axw-svc{grid-template-columns:1fr;}
+    .axw-test{grid-template-columns:1fr;}
+    .axw-stats{grid-template-columns:repeat(2,1fr);}
+    .axw-h1{font-size:38px;}
+    .axw-wrap{padding:0 20px;}
+    .axw-tnav{display:none;}
+  }
+</style>
+</helmet>
+
+<!-- ===== Desktop sidebar ===== -->
+<aside class="axw-side">
+  <a href="#home" class="axw-navlink" style="padding:0;margin-bottom:30px;gap:11px;">
+    <span class="wa-avatar wa-avatar--md wa-avatar--brand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span>
+    <span><span style="display:block;font-size:15px;font-weight:700;color:hsl(var(--foreground));letter-spacing:-0.01em;">Alexander</span><span style="display:block;font-size:11px;color:hsl(var(--muted-foreground));">AI Builder &middot; Consultant</span></span>
+  </a>
+  <nav style="display:flex;flex-direction:column;gap:4px;">
+    <a class="axw-navlink" href="#home" style="color:{{ nHome }};background:{{ bgHome }};"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>Home</a>
+    <a class="axw-navlink" href="#work" style="color:{{ nWork }};background:{{ bgWork }};"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Work</a>
+    <a class="axw-navlink" href="#about" style="color:{{ nAbout }};background:{{ bgAbout }};"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>About</a>
+    <a class="axw-navlink" href="#contact" style="color:{{ nContact }};background:{{ bgContact }};"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Contact</a>
+  </nav>
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:14px;">
+    <span class="wa-badge wa-badge--success" style="gap:6px;align-self:flex-start;"><span style="width:6px;height:6px;border-radius:50%;background:hsl(var(--status-success));display:inline-block;"></span>Available for projects</span>
+    <div style="display:flex;gap:8px;">
+      <button class="wa-btn wa-btn--outline wa-btn--sm" onClick="{{ copyEmail }}" style="flex:1;gap:6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>Email</button>
+      <a class="wa-btn wa-btn--outline wa-btn--sm" href="{{ linkedinUrl }}" target="_blank" rel="noopener" style="flex:1;gap:6px;text-decoration:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a>
+    </div>
+  </div>
+</aside>
+
+<div class="axw-main">
+  <!-- ===== Tablet / mobile top nav ===== -->
+  <header class="axw-top" style="position:sticky;top:0;z-index:30;height:64px;align-items:center;justify-content:space-between;padding:0 30px;background:hsl(var(--background)/.85);backdrop-filter:blur(12px);border-bottom:1px solid hsl(var(--border));">
+    <a href="#home" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <span class="wa-avatar wa-avatar--md wa-avatar--brand"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span>
+      <span style="font-size:15px;font-weight:700;color:hsl(var(--foreground));letter-spacing:-0.01em;">Alexander</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:26px;">
+      <nav class="axw-tnav" style="display:flex;align-items:center;gap:24px;">
+        <a class="axw-toplink" href="#work">Work</a>
+        <a class="axw-toplink" href="#about">About</a>
+        <a class="axw-toplink" href="#contact">Contact</a>
+      </nav>
+      <a class="wa-btn wa-btn--brand wa-btn--sm" href="#contact" style="text-decoration:none;">Let's talk</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" style="scroll-margin-top:80px;padding:72px 0 56px;">
+    <div class="axw-wrap">
+      <div class="axw-hero">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
+            <span class="wa-badge" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));gap:6px;font-weight:600;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>AI Builder &middot; Technology Consultant</span>
+            <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:hsl(var(--muted-foreground));"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>Jakarta, Indonesia</span>
+          </div>
+          <h1 class="axw-h1" style="font-weight:700;margin:0 0 22px;">Hello! I'm Alexander <span style="color:hsl(var(--brand));">👋</span></h1>
+          <p style="font-size:17px;line-height:1.6;color:hsl(var(--muted-foreground));margin:0 0 18px;max-width:540px;">I'm an <strong style="color:hsl(var(--foreground));font-weight:600;">AI Builder</strong> and Technology Consultant with <strong style="color:hsl(var(--foreground));font-weight:600;">13+ years</strong> of experience. I design and ship automation, AI-powered tools, and full web products — with a proven track record of building solutions that <strong style="color:hsl(var(--foreground));font-weight:600;">improve productivity</strong> and help businesses run better.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="wa-btn wa-btn--brand wa-btn--xl" href="#work" style="text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>View my work</a>
+            <button class="wa-btn wa-btn--outline wa-btn--xl" onClick="{{ copyEmail }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Copy email</button>
+          </div>
+        </div>
+
+        <div style="background:hsl(var(--foreground));border-radius:24px;padding:30px;color:hsl(var(--background));">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+            <span class="wa-avatar" style="width:60px;height:60px;border-radius:20px;background:hsl(var(--brand));color:#fff;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span>
+            <div><div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;">Alexander Horison</div><div style="font-size:13px;color:hsl(0 0% 65%);">AI Builder · Solution Architect</div></div>
+          </div>
+          <div style="height:1px;background:hsl(0 0% 100%/.12);margin-bottom:20px;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px;">
+            <div><div style="font-size:26px;font-weight:700;line-height:1;">13+</div><div style="font-size:12px;color:hsl(0 0% 62%);margin-top:4px;">Years experience</div></div>
+            <div><div style="font-size:26px;font-weight:700;line-height:1;">20+</div><div style="font-size:12px;color:hsl(0 0% 62%);margin-top:4px;">Projects shipped</div></div>
+          </div>
+          <div style="display:flex;gap:10px;">
+            <a class="wa-btn wa-btn--brand wa-btn--md" href="{{ whatsappUrl }}" target="_blank" rel="noopener" style="flex:1;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>WhatsApp</a>
+            <a class="wa-btn wa-btn--md" href="#contact" style="flex:1;text-decoration:none;background:hsl(0 0% 100%/.12);color:#fff;">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="axw-stats" style="margin-top:48px;">
+        <div class="wa-card" style="padding:22px;display:flex;flex-direction:column;">
+          <div style="width:36px;height:36px;border-radius:10px;background:hsl(var(--brand)/.1);color:hsl(var(--brand));display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect></svg></div>
+          <p style="font-size:40px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 7px;">13+</p>
+          <p style="font-size:13px;font-weight:600;margin:0 0 3px;">Years of experience</p>
+          <p style="font-size:11px;color:hsl(var(--muted-foreground));margin:0;">Building systems since 2011</p>
+        </div>
+        <div class="wa-card" style="padding:22px;display:flex;flex-direction:column;">
+          <div style="width:36px;height:36px;border-radius:10px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+          <p style="font-size:40px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 7px;">20+</p>
+          <p style="font-size:13px;font-weight:600;margin:0 0 3px;">Projects shipped</p>
+          <p style="font-size:11px;color:hsl(var(--muted-foreground));margin:0;">MVPs to enterprise platforms</p>
+        </div>
+        <div class="wa-card" style="padding:22px;display:flex;flex-direction:column;">
+          <div style="width:36px;height:36px;border-radius:10px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg></div>
+          <p style="font-size:40px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 7px;">8</p>
+          <p style="font-size:13px;font-weight:600;margin:0 0 3px;">AI builds shipped</p>
+          <p style="font-size:11px;color:hsl(var(--muted-foreground));margin:0;">Automation &amp; intelligence tools</p>
+        </div>
+        <div class="wa-card" style="padding:22px;display:flex;flex-direction:column;">
+          <div style="width:36px;height:36px;border-radius:10px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></div>
+          <p style="font-size:40px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 7px;">50%+</p>
+          <p style="font-size:13px;font-weight:600;margin:0 0 3px;">Avg. time saved</p>
+          <p style="font-size:11px;color:hsl(var(--muted-foreground));margin:0;">Measured across client projects</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section id="work" style="scroll-margin-top:80px;padding:48px 0;background:hsl(var(--muted)/.4);border-top:1px solid hsl(var(--border));border-bottom:1px solid hsl(var(--border));">
+    <div class="axw-wrap">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:hsl(var(--brand));margin-bottom:8px;">Selected Work</div>
+      <h2 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 8px;">Apps, products &amp; AI automation</h2>
+      <p style="font-size:14px;color:hsl(var(--muted-foreground));margin:0 0 30px;">{{ productCount }} web &amp; app products · {{ aiCount }} AI &amp; automation tools · click any card for the full case study.</p>
+
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:16px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));">Apps &amp; Web Products</span>
+      </div>
+      <div class="axw-work" style="margin-bottom:44px;">
+        <sc-for list="{{ productWork }}" as="p" hint-placeholder-count="6">
+          <button class="axw-card" onClick="{{ p.open }}" style="padding:22px;display:flex;flex-direction:column;gap:0;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+              <span class="wa-avatar" style="width:48px;height:48px;border-radius:14px;background:hsl(var(--brand)/.1);color:hsl(var(--brand));">{{ p.icon }}</span>
+              <sc-if value="{{ p.live }}"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:hsl(142 71% 32%);"><span style="width:6px;height:6px;border-radius:50%;background:hsl(var(--status-success));"></span>Live</span></sc-if>
+            </div>
+            <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px;">{{ p.name }}</div>
+            <div style="font-size:13px;color:hsl(var(--muted-foreground));margin-bottom:14px;">{{ p.short }} · {{ p.client }}</div>
+            <p style="font-size:13px;line-height:1.55;color:hsl(var(--muted-foreground));margin:0 0 16px;flex:1;">{{ p.teaser }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span class="wa-badge wa-badge--secondary">{{ p.period }}</span>
+              <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:hsl(var(--brand));">Case study<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></span>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+        <div style="flex:1;height:1px;background:hsl(var(--border));"></div>
+        <span class="wa-badge" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));gap:7px;font-weight:600;font-size:12px;padding:8px 14px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>AI &amp; Automation</span>
+        <div style="flex:1;height:1px;background:hsl(var(--border));"></div>
+      </div>
+      <p style="font-size:14px;color:hsl(var(--muted-foreground));margin:0 0 20px;text-align:center;">Productivity tooling built with AI — designed to remove manual, repetitive work.</p>
+      <div class="axw-work">
+        <sc-for list="{{ aiWork }}" as="p" hint-placeholder-count="6">
+          <button class="axw-card" onClick="{{ p.open }}" style="padding:22px;display:flex;flex-direction:column;gap:0;border-color:hsl(var(--brand)/.25);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+              <span class="wa-avatar" style="width:48px;height:48px;border-radius:14px;background:hsl(var(--brand)/.1);color:hsl(var(--brand));">{{ p.icon }}</span>
+              <span class="wa-badge" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));font-size:10px;gap:5px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>AI</span>
+            </div>
+            <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px;">{{ p.name }}</div>
+            <div style="font-size:13px;color:hsl(var(--muted-foreground));margin-bottom:14px;">{{ p.short }} · {{ p.client }}</div>
+            <p style="font-size:13px;line-height:1.55;color:hsl(var(--muted-foreground));margin:0 0 16px;flex:1;">{{ p.teaser }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span class="wa-badge wa-badge--secondary">{{ p.period }}</span>
+              <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:hsl(var(--brand));">Case study<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></span>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AI STACK ===== -->
+  <section id="ai-stack" style="padding:56px 0;">
+    <div class="axw-wrap">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:hsl(var(--brand));margin-bottom:8px;">AI Tech Stack</div>
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 10px;">Technologies I build with</h2>
+      <p style="font-size:14px;color:hsl(var(--muted-foreground));margin:0 0 28px;">The AI tools and platforms powering my automation, product, and creative work.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;">
+        <sc-for list="{{ aiStack }}" as="t" hint-placeholder-count="9">
+          <div class="wa-card" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
+            <div style="width:48px;height:48px;border-radius:14px;background:{{ t.color }};display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:-0.02em;color:{{ t.textColor }};">{{ t.initials }}</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;letter-spacing:-0.01em;margin-bottom:3px;">{{ t.name }}</div>
+              <div style="font-size:12px;color:hsl(var(--muted-foreground));">{{ t.tagline }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section style="padding:56px 0 20px;">
+    <div class="axw-wrap">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:hsl(var(--brand));margin-bottom:8px;">Services</div>
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 26px;">How I can help</h2>
+      <div class="axw-svc">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+          <div class="wa-card wa-card--pad" style="padding:24px;display:flex;flex-direction:column;gap:14px;">
+            <span class="wa-avatar" style="width:44px;height:44px;border-radius:13px;background:{{ s.iconBg }};color:{{ s.iconColor }};">{{ s.icon }}</span>
+            <div>
+              <div style="font-size:16px;font-weight:700;letter-spacing:-0.01em;">{{ s.name }}</div>
+              <div style="font-size:13px;color:hsl(var(--muted-foreground));margin-top:3px;">{{ s.desc }}</div>
+            </div>
+            <span class="wa-badge" style="align-self:flex-start;margin-top:auto;{{ s.priceStyle }}">{{ s.price }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section style="padding:36px 0 56px;">
+    <div class="axw-wrap">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:hsl(var(--brand));margin-bottom:8px;">What clients say</div>
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 26px;">Trusted by the people I work with</h2>
+      <div class="axw-test">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="2">
+          <div class="wa-card wa-card--pad" style="padding:28px;">
+            <p style="font-size:17px;line-height:1.5;letter-spacing:-0.01em;margin:0 0 20px;">"{{ t.quote }}"</p>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="wa-avatar wa-avatar--md" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));font-weight:600;">{{ t.initials }}</div>
+              <div><div style="font-size:14px;font-weight:600;">{{ t.by }}</div><div style="font-size:12px;color:hsl(var(--muted-foreground));">{{ t.role }}</div></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" style="scroll-margin-top:80px;padding:56px 0;background:hsl(var(--muted)/.4);border-top:1px solid hsl(var(--border));border-bottom:1px solid hsl(var(--border));">
+    <div class="axw-wrap">
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:hsl(var(--brand));margin-bottom:8px;">About</div>
+      <h2 style="font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:0 0 18px;">13 years turning operations into products</h2>
+      <p style="font-size:16px;line-height:1.65;max-width:760px;margin:0 0 8px;">Hey, I'm Alexander — a Web Developer, Project Manager, and Systems Designer with over 10 years of experience. I'm passionate about building smart digital tools that help businesses grow and run better.</p>
+      <p style="font-size:16px;line-height:1.65;max-width:760px;color:hsl(var(--muted-foreground));margin:0 0 30px;">I create apps and websites that streamline operations, improve user experience, and showcase brands in the best light. At the heart of it, I help companies evolve digitally and work more efficiently.</p>
+
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin-bottom:12px;">Tools I work with</div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:36px;">
+        <sc-for list="{{ tools }}" as="t" hint-placeholder-count="12">
+          <span class="wa-badge wa-badge--outline" style="font-weight:500;padding:7px 14px;background:hsl(var(--background));">{{ t }}</span>
+        </sc-for>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin-bottom:14px;">Experience</div>
+      <div class="axw-exp" style="margin-bottom:30px;">
+        <sc-for list="{{ experience }}" as="e" hint-placeholder-count="6">
+          <div class="wa-card wa-card--pad" style="padding:20px 22px;background:hsl(var(--background));">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;">
+              <div style="font-size:15px;font-weight:700;letter-spacing:-0.01em;">{{ e.title }}</div>
+              <sc-if value="{{ e.current }}"><span class="wa-badge wa-badge--success" style="font-size:10px;">Current</span></sc-if>
+            </div>
+            <div style="font-size:13px;color:hsl(var(--brand));font-weight:500;margin-bottom:8px;">{{ e.company }} · {{ e.period }}</div>
+            <p style="font-size:13px;line-height:1.55;color:hsl(var(--muted-foreground));margin:0;">{{ e.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin-bottom:12px;">Education</div>
+      <div class="wa-card wa-card--pad" style="display:flex;align-items:center;gap:14px;max-width:480px;background:hsl(var(--background));padding:16px 18px;">
+        <span class="wa-avatar wa-avatar--md" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"></path><path d="M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
+        <div><div style="font-size:14px;font-weight:600;">{{ schoolName }}</div><div style="font-size:13px;color:hsl(var(--muted-foreground));">{{ schoolDegree }}</div></div>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:30px 0 12px;">Courses &amp; Events</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;">
+        <sc-for list="{{ learning }}" as="l" hint-placeholder-count="3">
+          <div class="wa-card wa-card--pad" style="display:flex;align-items:center;gap:13px;background:hsl(var(--background));padding:16px 18px;">
+            <span class="wa-avatar wa-avatar--md" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));flex-shrink:0;">{{ l.icon }}</span>
+            <div><div style="font-size:14px;font-weight:600;letter-spacing:-0.01em;">{{ l.name }}</div><div style="font-size:12px;color:hsl(var(--muted-foreground));margin-top:1px;">{{ l.meta }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" style="scroll-margin-top:80px;padding:64px 0;">
+    <div class="axw-wrap">
+      <div class="axw-contact">
+        <div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:hsl(var(--brand));margin-bottom:8px;">Contact</div>
+          <h2 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0 0 12px;">Got questions?</h2>
+          <p style="font-size:16px;line-height:1.6;color:hsl(var(--muted-foreground));margin:0 0 26px;max-width:420px;">I'm always excited to collaborate on innovative and exciting projects! Reach out and let's build something great.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;max-width:440px;">
+            <button class="wa-row wa-row--button" onClick="{{ copyEmail }}" style="cursor:pointer;">
+              <div class="wa-row__lead" style="background:hsl(var(--brand)/.1);color:hsl(var(--brand));"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">E-mail</p><p class="wa-row__meta">{{ emailAddr }}</p></div>
+              <span class="wa-badge wa-badge--secondary" style="font-size:11px;">Copy</span>
+            </button>
+            <a class="wa-row wa-row--button" href="{{ whatsappUrl }}" target="_blank" rel="noopener" style="text-decoration:none;">
+              <div class="wa-row__lead" style="background:hsl(142 71% 45%/.12);color:hsl(142 71% 34%);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">WhatsApp</p><p class="wa-row__meta">{{ whatsappNum }}</p></div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+            <a class="wa-row wa-row--button" href="{{ linkedinUrl }}" target="_blank" rel="noopener" style="text-decoration:none;">
+              <div class="wa-row__lead" style="background:hsl(217 91% 60%/.12);color:hsl(217 70% 45%);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">LinkedIn</p><p class="wa-row__meta">/in/alexander-horison</p></div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="wa-card wa-card--pad" style="padding:28px;">
+          <sc-if value="{{ sent }}">
+            <div class="wa-status wa-status--success">
+              <div class="wa-status__head"><span class="wa-status__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></span><span class="wa-status__title">Message sent</span></div>
+              <p style="font-size:14px;line-height:1.55;margin:0;">Thanks {{ sentName }} — I'll get back to you soon. For anything urgent, WhatsApp is fastest.</p>
+              <button class="wa-btn wa-btn--outline wa-btn--md wa-btn--block" onClick="{{ resetForm }}">Send another message</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notSent }}">
+            <div style="font-size:16px;font-weight:700;margin-bottom:18px;letter-spacing:-0.01em;">Send a message</div>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div><label class="wa-label" for="axw-name">Name</label><input id="axw-name" class="wa-field wa-input" placeholder="Your name" value="{{ name }}" onChange="{{ onName }}" style="margin-top:7px;"></div>
+                <div><label class="wa-label" for="axw-email">Email</label><input id="axw-email" class="wa-field wa-input" type="email" placeholder="you@email.com" value="{{ email }}" onChange="{{ onEmail }}" style="margin-top:7px;"></div>
+              </div>
+              <div><label class="wa-label" for="axw-msg">Message</label><textarea id="axw-msg" class="wa-field wa-textarea" placeholder="Tell me about your project..." value="{{ message }}" onChange="{{ onMessage }}" style="margin-top:7px;min-height:140px;"></textarea></div>
+              <button class="wa-btn wa-btn--brand wa-btn--xl wa-btn--block" onClick="{{ sendMessage }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>Send message</button>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="border-top:1px solid hsl(var(--border));padding:30px 0;">
+    <div class="axw-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="wa-avatar wa-avatar--sm wa-avatar--brand"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span>
+        <span style="font-size:13px;color:hsl(var(--muted-foreground));">© 2024 Alexander Horison · Technology Consultant</span>
+      </div>
+      <div style="display:flex;gap:18px;font-size:13px;">
+        <a class="axw-toplink" href="#work">Work</a><a class="axw-toplink" href="#about">About</a><a class="axw-toplink" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== PROJECT MODAL ===== -->
+<sc-if value="{{ hasSelected }}">
+<div onClick="{{ closeProject }}" style="position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.5);backdrop-filter:blur(3px);display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow:auto;animation:axwFade .2s ease;">
+  <div onClick="{{ stop }}" style="background:hsl(var(--background));border-radius:22px;max-width:680px;width:100%;margin:auto;position:relative;animation:axwPop .28s cubic-bezier(.4,0,.2,1) both;overflow:hidden;">
+    <button class="wa-btn wa-btn--icon" onClick="{{ closeProject }}" aria-label="Close" style="position:absolute;top:16px;right:16px;z-index:2;background:hsl(var(--muted));"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+    <div style="padding:34px 36px 36px;">
+      <span class="wa-avatar" style="width:60px;height:60px;border-radius:18px;background:hsl(var(--brand)/.1);color:hsl(var(--brand));margin-bottom:18px;">{{ selIcon }}</span>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;"><h2 style="font-size:28px;font-weight:700;letter-spacing:-0.02em;margin:0;">{{ selName }}</h2><sc-if value="{{ selLive }}"><span class="wa-badge wa-badge--success" style="font-size:11px;">Live</span></sc-if></div>
+      <p style="font-size:14px;color:hsl(var(--muted-foreground));margin:0 0 22px;">{{ selShort }}</p>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+        <div style="flex:1;min-width:120px;background:hsl(var(--muted));border-radius:12px;padding:12px 14px;"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:3px;">Client</div><div style="font-size:14px;font-weight:600;">{{ selClient }}</div></div>
+        <div style="flex:1;min-width:90px;background:hsl(var(--muted));border-radius:12px;padding:12px 14px;"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:3px;">Year</div><div style="font-size:14px;font-weight:600;">{{ selPeriod }}</div></div>
+        <div style="flex:1.4;min-width:170px;background:hsl(var(--muted));border-radius:12px;padding:12px 14px;"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:3px;">Service</div><div style="font-size:13px;font-weight:600;">Business Analyst · Consult · Build</div></div>
+      </div>
+
+      <p style="font-size:15px;line-height:1.65;margin:0 0 26px;">{{ selIntro }}</p>
+
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="width:24px;height:24px;border-radius:7px;background:hsl(var(--status-failed)/.12);color:hsl(var(--status-failed));display:inline-flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></span><h3 style="font-size:15px;font-weight:700;margin:0;">The Challenge</h3></div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px;">
+        <sc-for list="{{ selChallenge }}" as="c" hint-placeholder-count="3"><div style="display:flex;gap:10px;font-size:14px;line-height:1.55;color:hsl(var(--muted-foreground));"><span style="flex-shrink:0;margin-top:7px;width:5px;height:5px;border-radius:50%;background:hsl(var(--status-failed));"></span><span>{{ c }}</span></div></sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="width:24px;height:24px;border-radius:7px;background:hsl(var(--brand)/.12);color:hsl(var(--brand));display:inline-flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span><h3 style="font-size:15px;font-weight:700;margin:0;">The Solution</h3></div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px;">
+        <sc-for list="{{ selSolution }}" as="s" hint-placeholder-count="3"><div style="display:flex;gap:10px;font-size:14px;line-height:1.55;"><span style="color:hsl(var(--brand));flex-shrink:0;margin-top:2px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>{{ s }}</span></div></sc-for>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="width:24px;height:24px;border-radius:7px;background:hsl(var(--status-success)/.14);color:hsl(142 71% 34%);display:inline-flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></span><h3 style="font-size:15px;font-weight:700;margin:0;">The Results</h3></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
+        <sc-for list="{{ selResults }}" as="r" hint-placeholder-count="3"><div class="wa-card" style="padding:14px;display:flex;gap:9px;align-items:flex-start;"><span style="color:hsl(142 71% 40%);flex-shrink:0;margin-top:1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></span><span style="font-size:13px;line-height:1.5;">{{ r }}</span></div></sc-for>
+      </div>
+
+      <sc-if value="{{ selHasQuote }}">
+        <div class="wa-card wa-card--pad" style="background:hsl(var(--brand)/.05);border:2px solid hsl(var(--brand)/.2);margin-bottom:24px;">
+          <p style="font-size:15px;line-height:1.55;margin:0 0 12px;font-style:italic;">"{{ selQuote }}"</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div class="wa-avatar wa-avatar--sm" style="background:hsl(var(--brand)/.12);color:hsl(var(--brand));font-weight:600;">{{ selQuoteInitials }}</div><div><div style="font-size:13px;font-weight:600;">{{ selQuoteBy }}</div><div style="font-size:11px;color:hsl(var(--muted-foreground));">{{ selQuoteRole }}</div></div></div>
+        </div>
+      </sc-if>
+
+      <div style="background:hsl(var(--muted));border-radius:14px;padding:18px;margin-bottom:22px;">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:6px;">In conclusion</div>
+        <p style="font-size:14px;line-height:1.6;margin:0;">{{ selConclusion }}</p>
+      </div>
+
+      <button class="wa-btn wa-btn--primary wa-btn--lg wa-btn--block" onClick="{{ closeAndContact }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>Start a project like this</button>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- toast -->
+<sc-if value="{{ copied }}">
+  <div style="position:fixed;left:50%;bottom:32px;z-index:70;background:hsl(var(--foreground));color:hsl(var(--background));padding:11px 20px;border-radius:9999px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:9px;box-shadow:0 14px 36px rgba(0,0,0,.3);animation:axwToast .22s ease;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Email copied to clipboard</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: "home", filter: "all", selectedId: null, copied: false, name: "", email: "", message: "", sent: false, sentName: "" };
+
+  componentDidMount() {
+    this.forceUpdate();
+    setTimeout(() => this.setupSpy(), 80);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); clearTimeout(this._ct); }
+
+  setupSpy() {
+    const ids = ["home", "work", "about", "contact"];
+    const els = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    if (!els.length) return;
+    if (this._io) this._io.disconnect();
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) this.setState({ active: e.target.id }); });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    els.forEach((el) => this._io.observe(el));
+  }
+
+  ic(paths, size) {
+    size = size || 20;
+    return React.createElement("svg", { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" },
+      (paths || []).map((d, i) => Array.isArray(d)
+        ? React.createElement("circle", { key: i, cx: d[0], cy: d[1], r: d[2] })
+        : React.createElement("path", { key: i, d: d })));
+  }
+
+  open(id) { this.setState({ selectedId: id }); }
+  closeProject() { this.setState({ selectedId: null }); }
+  closeAndContact() { this.setState({ selectedId: null }); setTimeout(() => { const el = document.getElementById("contact"); if (el) location.hash = "#contact"; }, 60); }
+  copyEmail() {
+    const A = window.AXP; const email = A ? A.contact.email : "alexanderhorison@gmail.com";
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(email); } catch (e) {}
+    this.setState({ copied: true });
+    clearTimeout(this._ct); this._ct = setTimeout(() => this.setState({ copied: false }), 1900);
+  }
+  sendMessage() {
+    if (!this.state.name.trim() || !this.state.message.trim()) return;
+    this.setState({ sent: true, sentName: this.state.name.trim().split(" ")[0] });
+  }
+  resetForm() { this.setState({ sent: false, name: "", email: "", message: "" }); }
+
+  renderVals() {
+    const A = window.AXP;
+    if (!A) return {};
+    const brand = "hsl(var(--brand))";
+    const muted = "hsl(var(--muted-foreground))";
+    const icons = A.icons;
+    const act = this.state.active;
+
+    const teaser = (p) => p.intro.split(". ")[0] + ".";
+    const withOpen = (p) => Object.assign({}, p, { icon: this.ic(icons[p.iconKey], 22), teaser: teaser(p), open: () => this.open(p.id) });
+
+    const productWork = A.projects.filter((p) => p.category === "product").map(withOpen);
+    const aiWork = A.projects.filter((p) => p.category === "ai").map(withOpen);
+    const aiStack = A.aiStack || [];
+
+    const services = A.services.map((s) => Object.assign({}, s, {
+      icon: this.ic(icons[s.iconKey], 20),
+      iconBg: s.free ? "hsl(var(--muted))" : "hsl(var(--brand)/.1)",
+      iconColor: s.free ? "hsl(var(--muted-foreground))" : "hsl(var(--brand))",
+      priceStyle: s.free ? "background:hsl(var(--status-success)/.16);color:hsl(142 71% 30%);" : "background:hsl(var(--secondary));color:hsl(var(--foreground));",
+    }));
+
+    const navColor = (id) => act === id ? brand : "hsl(var(--sidebar-foreground))";
+    const navBg = (id) => act === id ? "hsl(var(--brand)/.08)" : "transparent";
+
+    const sel = A.projects.find((p) => p.id === this.state.selectedId);
+
+    const vals = {
+      stats: A.stats, services, testimonials: A.testimonials, tools: A.tools, experience: A.experience,
+      schoolName: A.education.school, schoolDegree: A.education.degree,
+      learning: (A.learning || []).map((l) => Object.assign({}, l, { icon: this.ic(icons[l.iconKey], 18) })),
+      emailAddr: A.contact.email, whatsappNum: A.contact.whatsapp, whatsappUrl: A.contact.whatsappLink, linkedinUrl: A.contact.linkedin,
+      productWork, aiWork, aiStack, productCount: A.projects.filter((p) => p.category === "product").length, aiCount: A.projects.filter((p) => p.category === "ai").length,
+      nHome: navColor("home"), nWork: navColor("work"), nAbout: navColor("about"), nContact: navColor("contact"),
+      bgHome: navBg("home"), bgWork: navBg("work"), bgAbout: navBg("about"), bgContact: navBg("contact"),
+      copyEmail: () => this.copyEmail(), copied: this.state.copied,
+      name: this.state.name, email: this.state.email, message: this.state.message,
+      onName: (e) => this.setState({ name: e.target.value }), onEmail: (e) => this.setState({ email: e.target.value }), onMessage: (e) => this.setState({ message: e.target.value }),
+      sendMessage: () => this.sendMessage(), resetForm: () => this.resetForm(),
+      sent: this.state.sent, notSent: !this.state.sent, sentName: this.state.sentName,
+      hasSelected: !!sel, closeProject: () => this.closeProject(), closeAndContact: () => this.closeAndContact(), stop: (e) => e.stopPropagation(),
+    };
+
+    if (sel) {
+      Object.assign(vals, {
+        selName: sel.name, selShort: sel.short, selClient: sel.client, selPeriod: sel.period, selLive: sel.live,
+        selIcon: this.ic(icons[sel.iconKey], 26), selIntro: sel.intro, selConclusion: sel.conclusion,
+        selChallenge: sel.challenge, selSolution: sel.solution, selResults: sel.results,
+        selHasQuote: !!sel.quote, selQuote: sel.quote, selQuoteBy: sel.quoteBy, selQuoteRole: sel.quoteRole, selQuoteInitials: sel.quoteInitials,
+      });
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

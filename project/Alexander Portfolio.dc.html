@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/zenith-tech-design-system-a79a6f35-2244-4090-953f-3eb8ba69929a/styles.css">
+<script src="portfolio-data.js"></script>
+<style>
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:#e9e9ea;}
+  .ax-scroll::-webkit-scrollbar{width:0;height:0;}
+  .ax-scroll{scrollbar-width:none;}
+  @keyframes axUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes axIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+  @keyframes axToast{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+  .ax-press{transition:transform .12s cubic-bezier(.4,0,.2,1);}
+  .ax-press:active{transform:scale(.98);}
+</style>
+</helmet>
+<div style="min-height:100vh;width:100%;background:radial-gradient(120% 80% at 50% 0%, #f4f4f5 0%, #e4e4e7 60%, #dcdce0 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:36px 16px;font-family:var(--font-sans);color:hsl(var(--foreground));">
+
+  <div style="text-align:center;max-width:420px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:-0.01em;">
+      <span style="display:inline-flex;width:22px;height:22px;border-radius:7px;background:hsl(var(--brand));color:#fff;align-items:center;justify-content:center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span>
+      Alexander Horison — Portfolio, rebuilt
+    </div>
+    <div style="font-size:12px;color:hsl(var(--muted-foreground));margin-top:5px;">A consulting portfolio reimagined as a mobile app on the WA&nbsp;Broadcast design system · tap through every tab &amp; project</div>
+  </div>
+
+  <div style="position:relative;width:404px;height:852px;flex-shrink:0;background:#101012;border-radius:56px;padding:12px;box-shadow:0 50px 90px -30px rgba(0,0,0,.5), 0 0 0 2px #2a2a2e, inset 0 0 0 2px #000;">
+    <div style="position:relative;width:100%;height:100%;background:hsl(var(--background));border-radius:44px;overflow:hidden;">
+
+      <!-- status bar -->
+      <div style="position:absolute;top:0;left:0;right:0;height:52px;z-index:18;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:hsl(var(--background));">
+        <span style="font-size:15px;font-weight:600;letter-spacing:-0.01em;">9:41</span>
+        <div style="display:flex;align-items:center;gap:7px;color:hsl(var(--foreground));">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="6" width="3" height="6" rx="1"></rect><rect x="5" y="3.5" width="3" height="8.5" rx="1"></rect><rect x="10" y="1" width="3" height="11" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1" opacity="0.3"></rect></svg>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 4.2C3.2 2.2 5.8 1 8.5 1S13.8 2.2 16 4.2"></path><path d="M3.4 6.7C4.9 5.4 6.6 4.7 8.5 4.7s3.6.7 5.1 2"></path><path d="M5.8 9.2c.8-.7 1.7-1.1 2.7-1.1s1.9.4 2.7 1.1"></path><circle cx="8.5" cy="11" r="0.6" fill="currentColor"></circle></svg>
+          <div style="display:flex;align-items:center;gap:2px;"><div style="width:22px;height:11px;border:1.4px solid currentColor;border-radius:3px;opacity:.5;padding:1.5px;"><div style="width:80%;height:100%;background:currentColor;border-radius:1px;"></div></div><div style="width:1.4px;height:4px;background:currentColor;border-radius:1px;opacity:.5;"></div></div>
+        </div>
+      </div>
+      <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:118px;height:32px;background:#000;border-radius:17px;z-index:19;"></div>
+
+      <!-- scrollable content -->
+      <div class="ax-scroll" style="position:absolute;top:52px;bottom:68px;left:0;right:0;overflow-y:auto;overflow-x:hidden;background:hsl(var(--background));">
+
+        <!-- ============ HOME ============ -->
+        <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:6px 16px 28px;animation:axUp .35s ease both;">
+
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0 18px;">
+            <div style="display:flex;align-items:center;gap:11px;">
+              <div class="wa-avatar wa-avatar--md wa-avatar--brand"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></div>
+              <div>
+                <div style="font-size:15px;font-weight:700;line-height:1.1;letter-spacing:-0.01em;">Alexander</div>
+                <div style="font-size:11px;color:hsl(var(--muted-foreground));margin-top:1px;">AI Builder &amp; Consultant</div>
+              </div>
+            </div>
+            <span class="wa-badge wa-badge--success" style="gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:hsl(var(--status-success));display:inline-block;"></span>Available</span>
+          </div>
+
+          <h1 style="font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;margin:0 0 8px;">Hello! I'm<br>Alexander 👋</h1>
+          <div style="display:flex;align-items:center;gap:6px;color:hsl(var(--muted-foreground));font-size:13px;margin-bottom:12px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>Jakarta, Indonesia</div>
+          <span class="wa-badge" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));gap:6px;font-weight:600;margin-bottom:14px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>AI Builder &middot; Automation &middot; Productivity</span>
+          <p style="font-size:14px;line-height:1.6;color:hsl(var(--foreground));margin:0 0 18px;">I'm an <strong style="font-weight:600;">AI Builder</strong> &amp; Technology Consultant with <strong style="font-weight:600;">13+ years</strong> of experience — building automation, AI tools, and web products with a proven record of improving productivity for the businesses I work with.</p>
+
+          <div style="display:flex;gap:10px;margin-bottom:24px;">
+            <button class="wa-btn wa-btn--brand wa-btn--lg wa-btn--block" onClick="{{ goWork }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>View my work</button>
+            <button class="wa-btn wa-btn--outline wa-btn--lg" onClick="{{ copyEmail }}" style="flex-shrink:0;width:48px;padding:0;" aria-label="Copy email"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;">
+            <div class="wa-card" style="padding:14px;display:flex;flex-direction:column;">
+              <div style="width:28px;height:28px;border-radius:8px;background:hsl(var(--brand)/0.1);color:hsl(var(--brand));display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M3 10h18"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect></svg></div>
+              <p style="font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 4px;">13+</p>
+              <p style="font-size:11px;font-weight:600;margin:0 0 2px;">Years exp.</p>
+              <p style="font-size:10px;color:hsl(var(--muted-foreground));margin:0;">Building since 2011</p>
+            </div>
+            <div class="wa-card" style="padding:14px;display:flex;flex-direction:column;">
+              <div style="width:28px;height:28px;border-radius:8px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+              <p style="font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 4px;">20+</p>
+              <p style="font-size:11px;font-weight:600;margin:0 0 2px;">Projects shipped</p>
+              <p style="font-size:10px;color:hsl(var(--muted-foreground));margin:0;">MVPs to enterprise</p>
+            </div>
+            <div class="wa-card" style="padding:14px;display:flex;flex-direction:column;">
+              <div style="width:28px;height:28px;border-radius:8px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg></div>
+              <p style="font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 4px;">8</p>
+              <p style="font-size:11px;font-weight:600;margin:0 0 2px;">AI builds</p>
+              <p style="font-size:10px;color:hsl(var(--muted-foreground));margin:0;">Automation tools</p>
+            </div>
+            <div class="wa-card" style="padding:14px;display:flex;flex-direction:column;">
+              <div style="width:28px;height:28px;border-radius:8px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));display:flex;align-items:center;justify-content:center;margin-bottom:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></div>
+              <p style="font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1;margin:0 0 4px;">50%+</p>
+              <p style="font-size:11px;font-weight:600;margin:0 0 2px;">Avg. time saved</p>
+              <p style="font-size:10px;color:hsl(var(--muted-foreground));margin:0;">Client outcomes</p>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0;">Selected Work</h2>
+            <button class="wa-btn wa-btn--link wa-btn--sm" onClick="{{ goWork }}" style="font-size:12px;color:hsl(var(--brand));">See all →</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+            <sc-for list="{{ featured }}" as="p" hint-placeholder-count="4">
+              <button class="wa-row wa-row--button ax-press" onClick="{{ p.open }}">
+                <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));border-radius:11px;">{{ p.icon }}</div>
+                <div class="wa-row__body">
+                  <p class="wa-row__title">{{ p.name }}</p>
+                  <p class="wa-row__meta">{{ p.short }} · {{ p.client }}</p>
+                </div>
+                <span class="wa-badge wa-badge--secondary" style="font-size:11px;">{{ p.period }}</span>
+              </button>
+            </sc-for>
+          </div>
+
+          <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0 0 12px;">Services</h2>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+            <div class="wa-row">
+              <div class="wa-row__lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">Business Analyst Services</p><p class="wa-row__meta">Map processes &amp; requirements</p></div>
+              <span class="wa-badge" style="background:hsl(var(--status-success)/0.16);color:hsl(142 71% 30%);">FREE</span>
+            </div>
+            <div class="wa-row">
+              <div class="wa-row__lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">Consulting</p><p class="wa-row__meta">Strategy &amp; technical advice</p></div>
+              <span class="wa-badge" style="background:hsl(var(--status-success)/0.16);color:hsl(142 71% 30%);">FREE</span>
+            </div>
+            <div class="wa-row">
+              <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">Create &amp; Implement Solutions</p><p class="wa-row__meta">End-to-end delivery</p></div>
+              <span class="wa-badge wa-badge--secondary" style="white-space:nowrap;">IDR 2.000K/mo</span>
+            </div>
+          </div>
+
+          <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0 0 12px;">What clients say</h2>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:26px;">
+            <div class="wa-card wa-card--pad">
+              <p style="font-size:14px;line-height:1.55;margin:0 0 14px;color:hsl(var(--foreground));">"Alex works in a very timely manner and always ensures that you are fully satisfied with the results!"</p>
+              <div style="display:flex;align-items:center;gap:11px;">
+                <div class="wa-avatar wa-avatar--sm" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));font-weight:600;">MS</div>
+                <div><div style="font-size:13px;font-weight:600;">Michael Santoso</div><div style="font-size:11px;color:hsl(var(--muted-foreground));">Owner, Tjahaya Berkat Abadi</div></div>
+              </div>
+            </div>
+            <div class="wa-card wa-card--pad">
+              <p style="font-size:14px;line-height:1.55;margin:0 0 14px;color:hsl(var(--foreground));">"Working with Alex was an absolute game-changer for my operational process. That helped me save a lot of time."</p>
+              <div style="display:flex;align-items:center;gap:11px;">
+                <div class="wa-avatar wa-avatar--sm" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));font-weight:600;">JW</div>
+                <div><div style="font-size:13px;font-weight:600;">Jefri Wijaya</div><div style="font-size:11px;color:hsl(var(--muted-foreground));">Operational Manager, KKHome</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wa-card wa-card--pad" style="text-align:center;padding:24px 18px;background:hsl(var(--foreground));border:none;">
+            <h3 style="font-size:19px;font-weight:700;margin:0 0 7px;color:hsl(var(--background));letter-spacing:-0.01em;">Got questions?</h3>
+            <p style="font-size:13px;color:hsl(0 0% 70%);margin:0 0 16px;line-height:1.5;">I'm always excited to collaborate on innovative and exciting projects!</p>
+            <button class="wa-btn wa-btn--brand wa-btn--xl wa-btn--block" onClick="{{ goContact }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>Get in touch</button>
+          </div>
+
+        </div>
+        </sc-if>
+
+        <!-- ============ WORK ============ -->
+        <sc-if value="{{ isWork }}">
+        <div style="padding:14px 16px 28px;animation:axUp .35s ease both;">
+          <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.025em;margin:0 0 3px;">Selected Work</h1>
+          <p style="font-size:13px;color:hsl(var(--muted-foreground));margin:0 0 18px;">{{ productCount }} apps &amp; web · {{ aiCount }} AI tools · tap any project for the full case study.</p>
+
+          <h2 style="font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0 0 10px;display:flex;align-items:center;gap:7px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Apps &amp; Web Products</h2>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+            <sc-for list="{{ productWork }}" as="p" hint-placeholder-count="6">
+              <button class="wa-row wa-row--button ax-press" onClick="{{ p.open }}">
+                <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));border-radius:11px;height:44px;width:44px;">{{ p.icon }}</div>
+                <div class="wa-row__body">
+                  <p class="wa-row__title">{{ p.name }}</p>
+                  <p class="wa-row__meta">{{ p.short }} · {{ p.client }}</p>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;">
+                  <span class="wa-badge wa-badge--secondary" style="font-size:11px;">{{ p.period }}</span>
+                  <sc-if value="{{ p.live }}"><span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:hsl(142 71% 32%);"><span style="width:6px;height:6px;border-radius:50%;background:hsl(var(--status-success));"></span>Live</span></sc-if>
+                </div>
+              </button>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="flex:1;height:1px;background:hsl(var(--border));"></div>
+            <span class="wa-badge" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));gap:5px;font-weight:600;font-size:11px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>AI &amp; Automation</span>
+            <div style="flex:1;height:1px;background:hsl(var(--border));"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ aiWork }}" as="p" hint-placeholder-count="6">
+              <button class="wa-row wa-row--button ax-press" onClick="{{ p.open }}">
+                <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));border-radius:11px;height:44px;width:44px;">{{ p.icon }}</div>
+                <div class="wa-row__body">
+                  <p class="wa-row__title">{{ p.name }}</p>
+                  <p class="wa-row__meta">{{ p.short }} · {{ p.client }}</p>
+                </div>
+                <span class="wa-badge" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));font-size:10px;flex-shrink:0;">AI</span>
+              </button>
+            </sc-for>
+          </div>
+
+          <h2 style="font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:28px 0 12px;">AI Tech Stack</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <sc-for list="{{ aiStack }}" as="t" hint-placeholder-count="9">
+              <div style="border:1px solid hsl(var(--border));border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px;">
+                <div style="width:40px;height:40px;border-radius:11px;background:{{ t.color }};display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:-0.02em;color:{{ t.textColor }};">{{ t.initials }}</div>
+                <div style="font-size:13px;font-weight:700;letter-spacing:-0.01em;">{{ t.name }}</div>
+                <div style="font-size:11px;color:hsl(var(--muted-foreground));line-height:1.3;">{{ t.tagline }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ============ ABOUT ============ -->
+        <sc-if value="{{ isAbout }}">
+        <div style="padding:14px 16px 28px;animation:axUp .35s ease both;">
+          <div style="text-align:center;padding:8px 0 6px;">
+            <div class="wa-avatar wa-avatar--brand" style="width:76px;height:76px;border-radius:26px;margin:0 auto 14px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></div>
+            <h1 style="font-size:23px;font-weight:700;letter-spacing:-0.02em;margin:0 0 4px;">Alexander Horison</h1>
+            <p style="font-size:13px;color:hsl(var(--muted-foreground));margin:0 0 6px;">AI Builder · Solution Architect · Web Developer</p>
+            <div style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:hsl(var(--muted-foreground));"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>Jakarta, Indonesia</div>
+          </div>
+
+          <p style="font-size:14px;line-height:1.65;margin:18px 0 8px;">Hey, I'm Alexander — an <strong style="font-weight:600;">AI Builder</strong>, Solution Architect, and Web Developer with <strong style="font-weight:600;">13+ years</strong> of experience. I build automation and AI-powered tools that help businesses grow and run more efficiently.</p>
+          <p style="font-size:14px;line-height:1.65;margin:0 0 24px;color:hsl(var(--muted-foreground));">I create internal tools, apps, and websites that streamline operations and remove manual, repetitive work — with a proven track record of improving day-to-day productivity.</p>
+
+          <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0 0 12px;">Tools I work with</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+            <sc-for list="{{ tools }}" as="t" hint-placeholder-count="12">
+              <span class="wa-badge wa-badge--outline" style="font-weight:500;padding:6px 12px;">{{ t }}</span>
+            </sc-for>
+          </div>
+
+          <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0 0 16px;">Experience</h2>
+          <div style="position:relative;padding-left:26px;margin-bottom:26px;">
+            <div style="position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:hsl(var(--border));"></div>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <sc-for list="{{ experience }}" as="e" hint-placeholder-count="6">
+                <div style="position:relative;">
+                  <span style="position:absolute;left:-26px;top:3px;width:16px;height:16px;border-radius:50%;background:hsl(var(--background));border:2px solid {{ e.dot }};display:block;"></span>
+                  <div style="font-size:14px;font-weight:600;letter-spacing:-0.01em;">{{ e.title }}</div>
+                  <div style="font-size:12px;color:hsl(var(--brand));font-weight:500;margin:1px 0 2px;">{{ e.company }} · {{ e.period }}</div>
+                  <p style="font-size:12.5px;line-height:1.55;color:hsl(var(--muted-foreground));margin:4px 0 0;">{{ e.desc }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:0 0 12px;">Education</h2>
+          <div class="wa-row">
+            <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"></path><path d="M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
+            <div class="wa-row__body"><p class="wa-row__title">Bina Nusantara University</p><p class="wa-row__meta">Bachelor's Degree in Information Technology</p></div>
+          </div>
+
+          <h2 style="font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:hsl(var(--muted-foreground));margin:26px 0 12px;">Courses &amp; Events</h2>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ learning }}" as="l" hint-placeholder-count="3">
+              <div class="wa-row">
+                <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));">{{ l.icon }}</div>
+                <div class="wa-row__body"><p class="wa-row__title">{{ l.name }}</p><p class="wa-row__meta">{{ l.meta }}</p></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ============ CONTACT ============ -->
+        <sc-if value="{{ isContact }}">
+        <div style="padding:18px 16px 28px;animation:axUp .35s ease both;">
+          <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.025em;margin:0 0 7px;">Got questions?</h1>
+          <p style="font-size:14px;color:hsl(var(--muted-foreground));margin:0 0 20px;line-height:1.55;">I'm always excited to collaborate on innovative and exciting projects!</p>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">
+            <button class="wa-row wa-row--button ax-press" onClick="{{ copyEmail }}">
+              <div class="wa-row__lead" style="background:hsl(var(--brand)/0.1);color:hsl(var(--brand));"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">E-mail</p><p class="wa-row__meta">alexanderhorison@gmail.com</p></div>
+              <span class="wa-badge wa-badge--secondary" style="font-size:11px;">Copy</span>
+            </button>
+            <a class="wa-row wa-row--button ax-press" href="https://wa.me/6281281837477" target="_blank" rel="noopener" style="text-decoration:none;">
+              <div class="wa-row__lead" style="background:hsl(142 71% 45% / 0.12);color:hsl(142 71% 34%);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">WhatsApp</p><p class="wa-row__meta">+62 812 8183 7477</p></div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+            <a class="wa-row wa-row--button ax-press" href="https://www.linkedin.com/in/alexander-horison/" target="_blank" rel="noopener" style="text-decoration:none;">
+              <div class="wa-row__lead" style="background:hsl(217 91% 60% / 0.12);color:hsl(217 70% 45%);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></div>
+              <div class="wa-row__body"><p class="wa-row__title">LinkedIn</p><p class="wa-row__meta">/in/alexander-horison</p></div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:12px;margin:6px 0 18px;"><div style="flex:1;height:1px;background:hsl(var(--border));"></div><span style="font-size:11px;color:hsl(var(--muted-foreground));text-transform:uppercase;letter-spacing:0.05em;">or send a message</span><div style="flex:1;height:1px;background:hsl(var(--border));"></div></div>
+
+          <sc-if value="{{ sent }}">
+            <div class="wa-status wa-status--success" style="text-align:left;">
+              <div class="wa-status__head"><span class="wa-status__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></span><span class="wa-status__title">Message sent</span></div>
+              <p style="font-size:13px;line-height:1.55;margin:0;color:hsl(var(--foreground));">Thanks {{ sentName }} — I'll get back to you soon. For anything urgent, WhatsApp is fastest.</p>
+              <button class="wa-btn wa-btn--outline wa-btn--md wa-btn--block" onClick="{{ resetForm }}" style="margin-top:2px;">Send another message</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notSent }}">
+            <div style="display:flex;flex-direction:column;gap:15px;">
+              <div>
+                <label class="wa-label" for="ax-name">Your name</label>
+                <input id="ax-name" class="wa-field wa-input" placeholder="e.g. Michael Santoso" value="{{ name }}" onChange="{{ onName }}" style="margin-top:7px;">
+              </div>
+              <div>
+                <label class="wa-label" for="ax-msg">Message</label>
+                <textarea id="ax-msg" class="wa-field wa-textarea" placeholder="Tell me about your project..." value="{{ message }}" onChange="{{ onMessage }}" style="margin-top:7px;min-height:120px;"></textarea>
+              </div>
+              <button class="wa-btn wa-btn--brand wa-btn--xl wa-btn--block" onClick="{{ sendMessage }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>Send message</button>
+              <button class="wa-btn wa-btn--ghost wa-btn--sm wa-btn--block" onClick="{{ schedule }}" style="color:hsl(var(--muted-foreground));">Or schedule a call →</button>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+      </div>
+
+      <!-- ============ PROJECT DETAIL OVERLAY ============ -->
+      <sc-if value="{{ hasSelected }}">
+      <div style="position:absolute;top:52px;left:0;right:0;bottom:68px;z-index:24;background:hsl(var(--background));display:flex;flex-direction:column;box-shadow:0 1px 0 hsl(var(--border));animation:axIn .28s cubic-bezier(.4,0,.2,1) both;">
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 12px 12px;border-bottom:1px solid hsl(var(--border));flex-shrink:0;background:hsl(var(--background));">
+          <button class="wa-btn wa-btn--ghost wa-btn--icon ax-press" onClick="{{ closeProject }}" aria-label="Back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></button>
+          <div style="min-width:0;flex:1;"><p style="font-size:14px;font-weight:600;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ selName }}</p><p style="font-size:11px;color:hsl(var(--muted-foreground));margin:0;">{{ selShort }}</p></div>
+        </div>
+
+        <div class="ax-scroll" style="flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 16px 28px;">
+          <div class="wa-avatar wa-avatar--brand" style="width:60px;height:60px;border-radius:20px;margin-bottom:16px;">{{ selIcon }}</div>
+          <h1 style="font-size:23px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin:0 0 14px;">{{ selName }}</h1>
+
+          <div style="display:flex;gap:10px;margin-bottom:20px;">
+            <div style="flex:1;background:hsl(var(--muted));border-radius:12px;padding:11px 12px;"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:3px;">Client</div><div style="font-size:13px;font-weight:600;">{{ selClient }}</div></div>
+            <div style="flex:1;background:hsl(var(--muted));border-radius:12px;padding:11px 12px;"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:3px;">Year</div><div style="font-size:13px;font-weight:600;">{{ selPeriod }}</div></div>
+          </div>
+
+          <div style="margin-bottom:22px;"><div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:8px;">Service</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="wa-badge wa-badge--secondary">Business Analyst</span><span class="wa-badge wa-badge--secondary">Consultation</span><span class="wa-badge wa-badge--secondary">Implementation</span></div></div>
+
+          <p style="font-size:14px;line-height:1.65;margin:0 0 24px;color:hsl(var(--foreground));">{{ selIntro }}</p>
+
+          <div style="margin-bottom:22px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="width:24px;height:24px;border-radius:7px;background:hsl(var(--status-failed)/0.12);color:hsl(var(--status-failed));display:inline-flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></span><h2 style="font-size:15px;font-weight:700;margin:0;">The Challenge</h2></div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <sc-for list="{{ selChallenge }}" as="c" hint-placeholder-count="3">
+                <div style="display:flex;gap:9px;font-size:13px;line-height:1.5;color:hsl(var(--muted-foreground));"><span style="color:hsl(var(--status-failed));flex-shrink:0;margin-top:6px;width:5px;height:5px;border-radius:50%;background:hsl(var(--status-failed));"></span><span>{{ c }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="margin-bottom:22px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="width:24px;height:24px;border-radius:7px;background:hsl(var(--brand)/0.12);color:hsl(var(--brand));display:inline-flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></span><h2 style="font-size:15px;font-weight:700;margin:0;">The Solution</h2></div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <sc-for list="{{ selSolution }}" as="s" hint-placeholder-count="3">
+                <div style="display:flex;gap:9px;font-size:13px;line-height:1.5;color:hsl(var(--foreground));"><span style="color:hsl(var(--brand));flex-shrink:0;margin-top:2px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>{{ s }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="margin-bottom:22px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="width:24px;height:24px;border-radius:7px;background:hsl(var(--status-success)/0.14);color:hsl(142 71% 34%);display:inline-flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg></span><h2 style="font-size:15px;font-weight:700;margin:0;">The Results</h2></div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-for list="{{ selResults }}" as="r" hint-placeholder-count="3">
+                <div class="wa-card wa-card--pad" style="padding:12px 14px;display:flex;gap:10px;align-items:flex-start;"><span style="color:hsl(142 71% 40%);flex-shrink:0;margin-top:1px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg></span><span style="font-size:13px;line-height:1.5;">{{ r }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-if value="{{ selHasQuote }}">
+            <div class="wa-card wa-card--pad" style="background:hsl(var(--brand)/0.05);border:2px solid hsl(var(--brand)/0.2);margin-bottom:22px;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="hsl(var(--brand)/0.25)" stroke="none" style="margin-bottom:6px;"><path d="M10 11H6a1 1 0 0 1-1-1V7a3 3 0 0 1 3-3h0a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1zm9 0h-4a1 1 0 0 1-1-1V7a3 3 0 0 1 3-3h0a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1z"></path></svg>
+              <p style="font-size:14px;line-height:1.55;margin:0 0 12px;font-style:italic;">{{ selQuote }}</p>
+              <div style="display:flex;align-items:center;gap:10px;"><div class="wa-avatar wa-avatar--sm" style="background:hsl(var(--brand)/0.12);color:hsl(var(--brand));font-weight:600;">{{ selQuoteInitials }}</div><div><div style="font-size:12px;font-weight:600;">{{ selQuoteBy }}</div><div style="font-size:11px;color:hsl(var(--muted-foreground));">{{ selQuoteRole }}</div></div></div>
+            </div>
+          </sc-if>
+
+          <div style="background:hsl(var(--muted));border-radius:14px;padding:16px;margin-bottom:18px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:hsl(var(--muted-foreground));margin-bottom:6px;">In conclusion</div>
+            <p style="font-size:13px;line-height:1.6;margin:0;">{{ selConclusion }}</p>
+          </div>
+
+          <button class="wa-btn wa-btn--primary wa-btn--lg wa-btn--block ax-press" onClick="{{ goContactFromDetail }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>Start a project like this</button>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- bottom nav -->
+      <nav class="wa-bottomnav" style="position:absolute;left:0;right:0;bottom:0;height:68px;padding-bottom:10px;z-index:26;box-shadow:0 -1px 0 hsl(var(--border));">
+        <button class="wa-bottomnav__item ax-press" onClick="{{ goHome }}" style="color:{{ cHome }};">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+          <span class="wa-bottomnav__label">Home</span>
+        </button>
+        <button class="wa-bottomnav__item ax-press" onClick="{{ goWork }}" style="color:{{ cWork }};">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span class="wa-bottomnav__label">Work</span>
+        </button>
+        <button class="wa-bottomnav__item ax-press" onClick="{{ goAbout }}" style="color:{{ cAbout }};">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span class="wa-bottomnav__label">About</span>
+        </button>
+        <button class="wa-bottomnav__item ax-press" onClick="{{ goContact }}" style="color:{{ cContact }};">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+          <span class="wa-bottomnav__label">Contact</span>
+        </button>
+      </nav>
+
+      <!-- toast -->
+      <sc-if value="{{ copied }}">
+        <div style="position:absolute;left:50%;bottom:88px;z-index:30;background:hsl(var(--foreground));color:hsl(var(--background));padding:9px 18px;border-radius:9999px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(0,0,0,.28);animation:axToast .22s ease;white-space:nowrap;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Email copied to clipboard</div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: "home", selectedId: null, filter: "all", copied: false, name: "", message: "", sent: false, sentName: "" };
+
+  componentDidMount() { this.forceUpdate(); }
+
+  ic(paths, size) {
+    size = size || 20;
+    return React.createElement("svg", { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" },
+      paths.map((d, i) => Array.isArray(d)
+        ? React.createElement("circle", { key: i, cx: d[0], cy: d[1], r: d[2] })
+        : React.createElement("path", { key: i, d: d })));
+  }
+
+  data() {
+    const I = {
+      megaphone: ["m3 11 18-5v12L3 14v-3z", "M11.6 16.8a3 3 0 1 1-5.8-1.6"],
+      droplet: ["M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C4 11.1 3 13 3 15a7 7 0 0 0 7 7z"],
+      bag: ["M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z", "M3 6h18", "M16 10a4 4 0 0 1-8 0"],
+      car: ["M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2", [7, 17, 2], [17, 17, 2]],
+      chat: ["M7.9 20A9 9 0 1 0 4 16.1L2 22Z"],
+      calendar: ["M8 2v4", "M16 2v4", "M3 10h18", "M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"],
+      trending: ["M16 7h6v6", "m22 7-8.5 8.5-5-5L2 17"],
+      layers: ["m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z", "M2 12l8.58 3.91a2 2 0 0 0 1.66 0L21 12", "M2 17l8.58 3.91a2 2 0 0 0 1.66 0L21 17"],
+      building: ["M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18", "M2 22h20", "M10 6h4", "M10 10h4", "M10 14h4"],
+      cap: ["M22 10v6", "M2 10l10-5 10 5-10 5z", "M6 12v5c3 3 9 3 12 0v-5"],
+    };
+    return [
+      { id: "lovelo-room", name: "Lovelo Room", short: "Shopify E-commerce", client: "Lovelo Room", period: "2024–Now", live: true, icon: I.bag,
+        intro: "Loveloroom.com is a premier destination for luxury fashion — designer bags, shoes, accessories and apparel from iconic houses. The mission: a seamless, secure and exclusive online shopping experience for discerning customers worldwide.",
+        challenge: ["Presenting luxury products in a way that conveys quality and exclusivity.", "Delivering a high-end experience that matches customer expectations.", "Implementing secure e-commerce for high-value transactions."],
+        solution: ["Sophisticated visual design with high-quality imagery and detailed product pages.", "Elegant, minimalist navigation organized by category with smart filters.", "Shopify with secure gateways, real-time inventory and mobile-first responsive design."],
+        results: ["Elevated brand image — a luxury-boutique feel online.", "Increased engagement and reduced cart abandonment.", "Global reach via secure international payments and retention features."],
+        conclusion: "A luxurious, seamless e-commerce platform that elevates the brand and drives sales and loyalty." },
+      { id: "hydroclean", name: "Hydroclean", short: "Shopify E-commerce", client: "Hydroclean", period: "2022–Now", live: true, icon: I.droplet,
+        intro: "HydroClean.id offers professional vacuuming for mattresses, carpets and upholstery — eliminating dust mites and allergens for healthier indoor air. The site educates clients, showcases services, and enables booking and payment via a Shopify-powered engine.",
+        challenge: ["Building trust in a niche allergen-removal service many consumers don't know.", "Needing e-commerce to streamline booking and payment.", "Communicating advanced cleaning technology (MicroTech-Ray™)."],
+        solution: ["Shopify with service packages as bookable products and secure payments.", "Content strategy emphasizing health benefits and the cleaning process.", "Educational blog plus testimonials and certifications to build trust."],
+        results: ["Increased service bookings and higher conversion rates.", "Seamless, hassle-free experience encouraging repeat business.", "Efficient website management for the team."],
+        conclusion: "A service-oriented site that educates visitors and streamlines booking — boosting bookings and customer satisfaction." },
+      { id: "enterprise-resource-planning", name: "Enterprise Resource Planning", short: "Enterprise Platform", client: "Tjahaya Berkat Abadi", period: "2024–Now", live: true, icon: I.layers,
+        intro: "A comprehensive ERP for Tjahaya Berkat Abadi — a cigarette manufacturing and distribution business. It integrates inventory, purchase orders, sales orders and point-of-sale, with an accounting module planned for a complete end-to-end solution.",
+        challenge: ["Fragmented processes with no centralized system.", "Complex inventory across units and multiple locations.", "Manual PO/SO handling plus POS integration needs."],
+        solution: ["Real-time centralized inventory management.", "Automated purchase and sales orders.", "Integrated POS synced with inventory and sales; scalable design with custom reporting."],
+        results: ["Improved efficiency and productivity across departments.", "Real-time insights and enhanced accuracy.", "Seamless transactions on a future-ready platform."],
+        conclusion: "The ERP is transforming operations — a critical foundation for the company's continued growth and operational excellence.",
+        quote: "Alex works in a very timely manner and always ensures that you are fully satisfied with the results!", quoteBy: "Michael Santoso", quoteRole: "Owner, Tjahaya Berkat Abadi", quoteInitials: "MS" },
+      { id: "property-monitoring-management", name: "Property Monitoring Management", short: "Operations Dashboard", client: "KK Home", period: "2024–Now", live: true, icon: I.building,
+        intro: "The Property Rental Report System gives owners clear, accurate financial reports. By tracking income and expenses, it offers an organized view of property performance — ensuring transparency and better financial decisions.",
+        challenge: ["Manual financial tracking via spreadsheets and paper.", "Lack of real-time insights delaying decisions.", "Error-prone, time-consuming reporting."],
+        solution: ["Centralized transaction management as a single source of truth.", "Automated financial reporting with customizable formats.", "Data validation and encryption; intuitive dashboards."],
+        results: ["Financial reporting time reduced by over 50%.", "Enhanced owner transparency and trust.", "Reliable data and scalability across multiple properties."],
+        conclusion: "The system bridges property management and financial transparency — empowering owners with the insights to optimize their investments.",
+        quote: "Working with Alex was an absolute game-changer for my operational process. That helped me save a lot of time.", quoteBy: "Jefri Wijaya", quoteRole: "Operational Manager, KKHome", quoteInitials: "JW" },
+      { id: "learning-management-system", name: "Learning Management System", short: "Education Platform", client: "Bithealth", period: "2024", live: false, icon: I.cap,
+        intro: "A robust LMS that enhances corporate training. Admins upload and manage courses; employees access materials, track progress and log time per course — fostering continuous learning and professional development.",
+        challenge: ["Disorganized, decentralized training content.", "Difficult employee progress tracking.", "Limited insight into training impact; time-consuming admin."],
+        solution: ["Centralized course management in one platform.", "Employee progress tracking with time logging.", "Interactive quizzes and certifications plus real-time reporting and analytics."],
+        results: ["Streamlined training management that saves significant time.", "Improved learning outcomes and transparency.", "Data-driven decisions and reduced administrative overhead."],
+        conclusion: "A game-changer for corporate training — the foundation for a skilled, engaged and future-ready workforce." },
+      { id: "joinan", name: "JOINAN", short: "Securities Crowdfunding", client: "JOINAN", period: "2022–2024", live: false, icon: I.trending,
+        intro: "JOINAN is a securities-crowdfunding platform connecting businesses seeking capital with investors. Real-time transactions and detailed graphical analysis for the secondary market deliver a transparent, efficient investment experience.",
+        challenge: ["Limited funding access through traditional banking barriers.", "Demand for transparency and real-time investor insights.", "Smooth secondary-market trading and accessible data visualization."],
+        solution: ["Crowdfunding platform with transparent details on returns, risk and timelines.", "Real-time secondary-market transactions.", "Dynamic graphical analytics plus strict compliance and encryption."],
+        results: ["Broader investor access for businesses raising capital.", "Empowered investors via real-time data and insights.", "Efficient secondary-market liquidity and scalable growth."],
+        conclusion: "JOINAN bridges businesses and investors — fostering growth, transparency and trust in the financial ecosystem." },
+      { id: "halosis", name: "Halosis", short: "WhatsApp Chatbot API", client: "Halosis", period: "2020–2022", live: false, icon: I.chat,
+        intro: "Halosis is a pioneering Indonesian platform simplifying social commerce for small businesses, built on the WhatsApp Business API. It streamlines operations, improves engagement, and helps sellers scale seamlessly.",
+        challenge: ["Fragmented communication across multiple tools.", "Manual, error-prone order processing.", "Limited automation for growing inquiry and transaction volumes."],
+        solution: ["WhatsApp Business API with automated responses and interactive catalogs.", "Order automation, CRM, and broadcast / marketing messaging.", "Integrated payments and shipping plus AI-powered chatbots."],
+        results: ["Professional, seamless customer interactions and faster responses.", "Scalable sales operations without added manual effort.", "Higher conversion and richer business insights."],
+        conclusion: "Halosis redefined social commerce for Indonesian entrepreneurs — a leader in social-commerce innovation." },
+      { id: "snapinn", name: "Snapinn", short: "Booking System", client: "Snapinn", period: "2019–2021", live: false, icon: I.calendar,
+        intro: "Snapinn is a tailored platform that simplifies property rental management for hosts and guests — a comprehensive solution to list, manage and book properties efficiently with a user-centric design.",
+        challenge: ["Handling listings, availability and communication seamlessly.", "Unifying fragmented booking and payment processes.", "Flexibility and scalable performance as the user base grows."],
+        solution: ["Customizable templates and a feature-rich host dashboard.", "Centralized booking with real-time availability and calendar sync.", "Secure payments (VA, cards, e-wallets) and scalable, responsive architecture."],
+        results: ["Streamlined operations that automate critical host tasks.", "Seamless guest journey and higher satisfaction.", "Increased revenue opportunities and consistent branding."],
+        conclusion: "Snapinn redefines rental management — scalable, user-friendly, and built for confident growth in the rental market." },
+      { id: "jp-auto-sports", name: "JP Auto Sports", short: "Company Profile & Catalog", client: "JP Auto Sports", period: "2018", live: false, icon: I.car,
+        intro: "JP 4X4 Auto Sport supplies high-quality 4x4 accessories for double-cabins, SUVs, Jeeps and off-road vehicles — bumpers, winches, lighting, rooftop tents and more. The site equips off-road enthusiasts with a professional catalog and brand presence.",
+        challenge: ["Organizing an expansive, multi-category catalog by vehicle compatibility.", "Establishing a professional online presence and authority.", "Creating an intuitive experience for non-technical and international buyers."],
+        solution: ["Clear categories (Bumpers & Bars, Lighting, Outdoor, Winches, Mining Kits) with rich detail.", "Dynamic search and filtering by vehicle type, category, brand and price.", "Fully responsive design across all devices."],
+        results: ["A polished, professional presence and stronger reputation.", "Higher engagement and product inquiries.", "Streamlined operations and increased SEO-driven reach."],
+        conclusion: "A transformative step for JP 4X4's digital footprint — a go-to destination for off-road enthusiasts." },
+      { id: "aerate", name: "Aerate", short: "Company Profile", client: "Aerate", period: "2022", live: false, icon: I.megaphone,
+        intro: "Aerate provides antimicrobial coating services that improve indoor hygiene and air quality — for air conditioners, high-touch surfaces and vehicle interiors, with up to 90 days of active protection. The goal: a digital presence that showcases their commitment to health.",
+        challenge: ["Inconsistent content across multiple stakeholders with differing opinions.", "Limited customization within Webflow's template-based structure."],
+        solution: ["A clear content strategy and brand guide organizing services, benefits and testimonials.", "Optimized UI within Webflow's constraints — custom imagery, icons and interactions.", "Structured stakeholder feedback with a clear approval process."],
+        results: ["A polished, cohesive site aligned to Aerate's brand identity.", "Responsive experience across desktop and mobile.", "Unified messaging and an easy-to-manage CMS for the team."],
+        conclusion: "Strategic planning and thoughtful design overcame technical limits and stakeholder challenges — now a key asset in Aerate's marketing." },
+    ];
+  }
+
+  open(id) { this.setState({ selectedId: id }); }
+  closeProject() { this.setState({ selectedId: null }); }
+  go(tab) { this.setState({ tab: tab, selectedId: null }); }
+
+  copyEmail() {
+    const email = "alexanderhorison@gmail.com";
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(email);
+    } catch (e) {}
+    this.setState({ copied: true });
+    clearTimeout(this._ct);
+    this._ct = setTimeout(() => this.setState({ copied: false }), 1900);
+  }
+
+  sendMessage() {
+    if (!this.state.name.trim() || !this.state.message.trim()) return;
+    this.setState({ sent: true, sentName: this.state.name.trim().split(" ")[0] });
+  }
+  resetForm() { this.setState({ sent: false, name: "", message: "" }); }
+  schedule() { try { window.open("https://wa.me/6281281837477", "_blank"); } catch (e) {} }
+
+  renderVals() {
+    const A = window.AXP || {};
+    const projects = A.projects || [];
+    const icons = A.icons || {};
+    const tab = this.state.tab;
+    const brand = "hsl(var(--brand))";
+    const muted = "hsl(var(--muted-foreground))";
+
+    const withOpen = (p) => Object.assign({}, p, { icon: this.ic(icons[p.iconKey] || [], 20), open: () => this.open(p.id) });
+    const featured = projects.slice(0, 4).map(withOpen);
+
+    const productWork = projects.filter((p) => p.category === "product").map(withOpen);
+    const aiWork = projects.filter((p) => p.category === "ai").map(withOpen);
+    const aiStack = A.aiStack || [];
+
+    const tools = A.tools || [];
+    const experience = (A.experience || []).map((e) => Object.assign({}, e, { dot: e.current ? brand : "hsl(var(--border))" }));
+
+    const sel = projects.find((p) => p.id === this.state.selectedId);
+
+    const vals = {
+      isHome: tab === "home", isWork: tab === "work", isAbout: tab === "about", isContact: tab === "contact",
+      goHome: () => this.go("home"), goWork: () => this.go("work"), goAbout: () => this.go("about"), goContact: () => this.go("contact"),
+      cHome: tab === "home" ? brand : muted, cWork: tab === "work" ? brand : muted, cAbout: tab === "about" ? brand : muted, cContact: tab === "contact" ? brand : muted,
+      featured, productWork, aiWork, aiStack, tools, experience,
+      learning: (A.learning || []).map((l) => Object.assign({}, l, { icon: this.ic(icons[l.iconKey] || [], 18) })),
+      workTotal: projects.length, liveTotal: projects.filter((p) => p.live).length, productCount: projects.filter((p) => p.category === "product").length, aiCount: projects.filter((p) => p.category === "ai").length,
+      copyEmail: () => this.copyEmail(), copied: this.state.copied, schedule: () => this.schedule(),
+      name: this.state.name, message: this.state.message,
+      onName: (e) => this.setState({ name: e.target.value }), onMessage: (e) => this.setState({ message: e.target.value }),
+      sendMessage: () => this.sendMessage(), resetForm: () => this.resetForm(),
+      sent: this.state.sent, notSent: !this.state.sent, sentName: this.state.sentName,
+      hasSelected: !!sel,
+      closeProject: () => this.closeProject(),
+      goContactFromDetail: () => this.go("contact"),
+    };
+
+    if (sel) {
+      Object.assign(vals, {
+        selName: sel.name, selShort: sel.short, selClient: sel.client, selPeriod: sel.period,
+        selIcon: this.ic(icons[sel.iconKey] || [], 26), selIntro: sel.intro, selConclusion: sel.conclusion,
+        selChallenge: sel.challenge, selSolution: sel.solution, selResults: sel.results,
+        selHasQuote: !!sel.quote, selQuote: sel.quote ? '"' + sel.quote + '"' : "", selQuoteBy: sel.quoteBy, selQuoteRole: sel.quoteRole, selQuoteInitials: sel.quoteInitials,
+      });
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

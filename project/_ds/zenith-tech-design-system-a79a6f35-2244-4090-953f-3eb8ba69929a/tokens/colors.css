@@ -1,0 +1,63 @@
+/* ============================================================
+   WA Broadcast — Color tokens
+   Ported verbatim from src/index.css (shadcn "default", neutral
+   gray base + red brand + green success). Values are HSL channels
+   so they compose as hsl(var(--token)) and hsl(var(--token)/<a>).
+   ============================================================ */
+:root {
+  /* — Base surfaces & ink — */
+  --background: 0 0% 100%;          /* @kind color */
+  --foreground: 0 0% 9%;            /* @kind color */
+
+  --card: 0 0% 100%;               /* @kind color */
+  --card-foreground: 0 0% 9%;      /* @kind color */
+
+  --popover: 0 0% 100%;            /* @kind color */
+  --popover-foreground: 0 0% 9%;   /* @kind color */
+
+  /* — Primary = near-black ink (default buttons, emphasis) — */
+  --primary: 0 0% 9%;              /* @kind color */
+  --primary-foreground: 0 0% 98%;  /* @kind color */
+
+  /* — Secondary / muted / accent = light gray fills — */
+  --secondary: 0 0% 96%;           /* @kind color */
+  --secondary-foreground: 0 0% 9%; /* @kind color */
+  --muted: 0 0% 96%;               /* @kind color */
+  --muted-foreground: 0 0% 45%;    /* @kind color */
+  --accent: 0 0% 96%;              /* @kind color */
+  --accent-foreground: 0 0% 9%;    /* @kind color */
+
+  /* — Brand = red. The signature accent: send CTAs, active nav,
+       selected states, logo lockups. — */
+  --brand: 0 72% 51%;              /* @kind color */
+  --brand-foreground: 0 0% 100%;   /* @kind color */
+
+  /* — Semantic — */
+  --destructive: 0 84% 60%;            /* @kind color */
+  --destructive-foreground: 0 0% 98%;  /* @kind color */
+  --success: 145 65% 42%;              /* @kind color */
+  --success-foreground: 0 0% 100%;     /* @kind color */
+
+  /* — Lines & focus — */
+  --border: 0 0% 90%;   /* @kind color */
+  --input: 0 0% 90%;    /* @kind color */
+  --ring: 0 0% 9%;      /* @kind color */
+
+  /* — Sidebar (desktop CMS shell) — */
+  --sidebar-background: 0 0% 98%;          /* @kind color */
+  --sidebar-foreground: 0 0% 25%;          /* @kind color */
+  --sidebar-primary: 0 0% 9%;              /* @kind color */
+  --sidebar-primary-foreground: 0 0% 98%;  /* @kind color */
+  --sidebar-accent: 0 0% 94%;              /* @kind color */
+  --sidebar-accent-foreground: 0 0% 9%;    /* @kind color */
+  --sidebar-border: 0 0% 91%;              /* @kind color */
+  --sidebar-ring: 0 0% 9%;                 /* @kind color */
+
+  /* — Delivery-status palette (broadcast result cards).
+       Mapped to the Tailwind hues the product uses directly. — */
+  --status-pending: 217 91% 60%;      /* @kind color */ /* blue-500  — queued / sending */
+  --status-pending-soft: 214 95% 93%; /* @kind color */ /* blue-100  — track / chip bg */
+  --status-success: 142 71% 45%;      /* @kind color */ /* green-500 — delivered */
+  --status-warning: 38 92% 50%;       /* @kind color */ /* amber-500 — partial */
+  --status-failed: 0 84% 60%;         /* @kind color */ /* red-500   — failed */
+}

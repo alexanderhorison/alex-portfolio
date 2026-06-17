@@ -1,0 +1,12 @@
+/* ============================================================
+   WA Broadcast — Design System entry point
+   Consumers link THIS file only. Import order: tokens → semantic
+   aliases → base. Keep this file to @import lines exclusively.
+   ============================================================ */
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/semantic.css";
+@import "./tokens/base.css";
+@import "./components/core.css";
+@import "./components/app.css";

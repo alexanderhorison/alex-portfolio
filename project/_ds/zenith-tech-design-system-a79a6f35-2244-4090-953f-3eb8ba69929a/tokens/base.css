@@ -1,0 +1,38 @@
+/* ============================================================
+   WA Broadcast — Base / reset
+   Applies the type system to the document and ports the product's
+   body settings (antialiasing, tap-highlight off, ligatures).
+   ============================================================ */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  margin: 0;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS safe-area padding for the fixed bottom nav */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* — Entrance animations used on the login / first paint — */
+@keyframes wa-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes wa-scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in  { animation: wa-fade-in var(--duration-normal) var(--ease-out) both; }
+.animate-scale-in { animation: wa-scale-in var(--duration-normal) var(--ease-out) both; }
