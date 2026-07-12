@@ -35,6 +35,7 @@ export interface AiStackItem {
   initials: string;
   color: string;
   textColor: string;
+  logoFile?: string;
 }
 
 export interface LearningItem {
@@ -104,23 +105,23 @@ export const LEARNING: LearningItem[] = [
 ];
 
 export const AI_STACK: AiStackItem[] = [
-  { name: "n8n", tagline: "Workflow automation", initials: "n8n", color: "#FF6540", textColor: "#fff" },
-  { name: "Antigravity", tagline: "AI developer browser", initials: "AG", color: "#0D1117", textColor: "#A78BFA" },
-  { name: "Claude Code", tagline: "AI coding assistant", initials: "CC", color: "#D97757", textColor: "#fff" },
-  { name: "Retool", tagline: "Internal tools builder", initials: "Re", color: "#F36B24", textColor: "#fff" },
-  { name: "Claude Design", tagline: "AI design studio", initials: "CD", color: "#B87333", textColor: "#fff" },
-  { name: "Gemini", tagline: "Google AI model", initials: "Ge", color: "#4285F4", textColor: "#fff" },
-  { name: "Kiro", tagline: "Spec-driven AI IDE", initials: "Ki", color: "#FF9900", textColor: "#fff" },
-  { name: "9 Router", tagline: "AI model routing", initials: "9R", color: "#6366F1", textColor: "#fff" },
-  { name: "Paperclip", tagline: "AI agent platform", initials: "PC", color: "#1C1C1C", textColor: "#A3E635" },
-  { name: "OpenClaw", tagline: "AI automation tool", initials: "OC", color: "#2D2D2D", textColor: "#F97316" },
-  { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff" },
-  { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff" },
-  { name: "Portainer", tagline: "Container management", initials: "Po", color: "#13BEF9", textColor: "#0a0a0a" },
-  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff" },
-  { name: "Cloudflare Zero Trust", tagline: "Zero trust network access", initials: "CF", color: "#F38020", textColor: "#fff" },
-  { name: "WAHA", tagline: "WhatsApp HTTP API", initials: "WA", color: "#25D366", textColor: "#fff" },
-  { name: "Metabase", tagline: "Business intelligence", initials: "MB", color: "#509EE3", textColor: "#fff" },
+  { name: "n8n", tagline: "Workflow automation", initials: "n8n", color: "#FF6540", textColor: "#fff", logoFile: "n8n.png" },
+  { name: "Antigravity", tagline: "AI developer browser", initials: "AG", color: "#0D1117", textColor: "#A78BFA", logoFile: "antigravity.png" },
+  { name: "Claude Code", tagline: "AI coding assistant", initials: "CC", color: "#D97757", textColor: "#fff", logoFile: "claude-code.png" },
+  { name: "Retool", tagline: "Internal tools builder", initials: "Re", color: "#F36B24", textColor: "#fff", logoFile: "retool.png" },
+  { name: "Claude Design", tagline: "AI design studio", initials: "CD", color: "#B87333", textColor: "#fff", logoFile: "claude-design.png" },
+  { name: "Gemini", tagline: "Google AI model", initials: "Ge", color: "#4285F4", textColor: "#fff", logoFile: "gemini.png" },
+  { name: "Kiro", tagline: "Spec-driven AI IDE", initials: "Ki", color: "#FF9900", textColor: "#fff", logoFile: "kiro.png" },
+  { name: "9 Router", tagline: "AI model routing", initials: "9R", color: "#6366F1", textColor: "#fff", logoFile: "9router.png" },
+  { name: "Paperclip", tagline: "AI agent platform", initials: "PC", color: "#1C1C1C", textColor: "#A3E635", logoFile: "paperclip.png" },
+  { name: "OpenClaw", tagline: "AI automation tool", initials: "OC", color: "#2D2D2D", textColor: "#F97316", logoFile: "openclaw.png" },
+  { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff", logoFile: "hermes.png" },
+  { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff", logoFile: "glideapps.png" },
+  { name: "Portainer", tagline: "Container management", initials: "Po", color: "#13BEF9", textColor: "#0a0a0a", logoFile: "portainer.png" },
+  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff", logoFile: "traefik.png" },
+  { name: "Cloudflare Zero Trust", tagline: "Zero trust network access", initials: "CF", color: "#F38020", textColor: "#fff", logoFile: "cloudflare.png" },
+  { name: "WAHA", tagline: "WhatsApp HTTP API", initials: "WA", color: "#25D366", textColor: "#fff", logoFile: "waha.png" },
+  { name: "Metabase", tagline: "Business intelligence", initials: "MB", color: "#509EE3", textColor: "#fff", logoFile: "metabase.png" },
 ];
 
 export const SERVICES: Service[] = [

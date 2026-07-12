@@ -298,7 +298,10 @@ export function DesktopView() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(155px,1fr))', gap: 14 }}>
               {AI_STACK.map((t, i) => (
                 <div key={i} className="wa-card" style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  <div style={{ width: 48, height: 48, borderRadius: 14, background: t.color, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, letterSpacing: '-0.02em', color: t.textColor }}>{t.initials}</div>
+                  <div style={{ width: 48, height: 48, borderRadius: 14, background: t.color, overflow: 'hidden', position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '-0.02em', color: t.textColor }}>{t.initials}</span>
+                    {t.logoFile && <img src={`/logos/${t.logoFile}`} alt={t.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
+                  </div>
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '-0.01em', marginBottom: 3 }}>{t.name}</div>
                     <div style={{ fontSize: 12, color: 'hsl(var(--muted-foreground))' }}>{t.tagline}</div>

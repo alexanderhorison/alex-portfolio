@@ -351,8 +351,8 @@ body {
 }
 .wa-row__lead img { height: 100%; width: 100%; object-fit: cover; }
 .wa-row__body { flex: 1; min-width: 0; }
-.wa-row__title { font-size: var(--text-sm); font-weight: var(--weight-medium); color: hsl(var(--foreground)); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.wa-row__meta { font-size: var(--text-2xs); color: hsl(var(--muted-foreground)); }
+.wa-row__title { font-size: var(--text-sm); font-weight: var(--weight-medium); color: hsl(var(--foreground)); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0; }
+.wa-row__meta { font-size: var(--text-2xs); color: hsl(var(--muted-foreground)); margin: 0; }
 
 /* ============================================================
    Component: StatusCard
