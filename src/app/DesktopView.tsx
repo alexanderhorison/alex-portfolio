@@ -229,11 +229,15 @@ export function DesktopView() {
                     <span className="wa-avatar" style={{ width: 48, height: 48, borderRadius: 14, background: 'hsl(var(--brand) / .1)', color: 'hsl(var(--brand))' }}>
                       <Icon paths={ICONS[p.iconKey]} size={22} />
                     </span>
-                    {p.live && (
+                    {p.live ? (
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, fontWeight: 600, color: 'hsl(142 71% 32%)' }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'hsl(var(--status-success))' }} />Live
                       </span>
-                    )}
+                    ) : p.comingSoon ? (
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 11, fontWeight: 600, color: 'hsl(var(--brand))' }}>
+                        Soon
+                      </span>
+                    ) : null}
                   </div>
                   <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: '-0.01em', marginBottom: 4 }}>{p.name}</div>
                   <div style={{ fontSize: 13, color: 'hsl(var(--muted-foreground))', marginBottom: 14 }}>{p.short} · {p.client}</div>
@@ -515,7 +519,11 @@ export function DesktopView() {
               </span>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
                 <h2 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', margin: 0 }}>{sel.name}</h2>
-                {sel.live && <span className="wa-badge wa-badge--success" style={{ fontSize: 11 }}>Live</span>}
+                {sel.live ? (
+                  <span className="wa-badge wa-badge--success" style={{ fontSize: 11 }}>Live</span>
+                ) : sel.comingSoon ? (
+                  <span className="wa-badge" style={{ fontSize: 11, background: 'hsl(var(--brand) / .1)', color: 'hsl(var(--brand))' }}>Coming Soon</span>
+                ) : null}
               </div>
               <p style={{ fontSize: 14, color: 'hsl(var(--muted-foreground))', margin: '0 0 22px' }}>{sel.short}</p>
 

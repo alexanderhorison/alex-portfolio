@@ -205,12 +205,14 @@ export function MobileView() {
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5, flexShrink: 0 }}>
                     <span className="wa-badge wa-badge--secondary" style={{ fontSize: 11 }}>{p.period}</span>
-                    {p.live && (
+                    {p.live ? (
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 10, fontWeight: 600, color: 'hsl(142 71% 32%)' }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'hsl(var(--status-success))' }} />
                         Live
                       </span>
-                    )}
+                    ) : p.comingSoon ? (
+                      <span style={{ fontSize: 10, fontWeight: 600, color: 'hsl(var(--brand))' }}>Soon</span>
+                    ) : null}
                   </div>
                 </button>
               ))}
