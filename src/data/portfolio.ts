@@ -118,7 +118,7 @@ export const AI_STACK: AiStackItem[] = [
   { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff", logoFile: "hermes.png" },
   { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff", logoFile: "glideapps.png" },
   { name: "Portainer", tagline: "Container management", initials: "Po", color: "#13BEF9", textColor: "#0a0a0a", logoFile: "portainer.png" },
-  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff", logoFile: "traefik.png" },
+  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff" },
   { name: "Cloudflare Zero Trust", tagline: "Zero trust network access", initials: "CF", color: "#F38020", textColor: "#fff", logoFile: "cloudflare-zero-trust.png" },
   { name: "WAHA", tagline: "WhatsApp HTTP API", initials: "WA", color: "#25D366", textColor: "#fff", logoFile: "waha.png" },
   { name: "Metabase", tagline: "Business intelligence", initials: "MB", color: "#509EE3", textColor: "#fff", logoFile: "metabase.svg" },
