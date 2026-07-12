@@ -492,7 +492,7 @@ export function DesktopView() {
               <span className="wa-avatar wa-avatar--sm wa-avatar--brand">
                 <Icon paths={ICONS.send} size={15} />
               </span>
-              <span style={{ fontSize: 13, color: 'hsl(var(--muted-foreground))' }}>© 2024 Alexander Horison · Technology Consultant</span>
+              <span style={{ fontSize: 13, color: 'hsl(var(--muted-foreground))' }}>© {new Date().getFullYear()} Alexander Horison · Technology Consultant</span>
             </div>
             <div style={{ display: 'flex', gap: 18, fontSize: 13 }}>
               <a className="axw-toplink" href="#work">Work</a>
