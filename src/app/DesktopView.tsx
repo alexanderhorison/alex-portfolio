@@ -298,9 +298,15 @@ export function DesktopView() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(155px,1fr))', gap: 14 }}>
               {AI_STACK.map((t, i) => (
                 <div key={i} className="wa-card" style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  <div style={{ width: 48, height: 48, borderRadius: 14, background: t.color, overflow: 'hidden', position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '-0.02em', color: t.textColor }}>{t.initials}</span>
-                    {t.logoFile && <img src={`/logos/${t.logoFile}`} alt={t.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 6, display: 'none' }} onLoad={e => { const img = e.target as HTMLImageElement; img.style.display = 'block'; const span = img.previousElementSibling as HTMLElement; if (span) span.style.display = 'none'; const parent = img.parentElement as HTMLElement; if (parent) parent.style.background = '#fff'; }} onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
+                  <div style={{ width: 48, height: 48, borderRadius: 14, background: t.logoFile ? '#fff' : t.color, overflow: 'hidden', position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    {t.logoFile ? (
+                      <>
+                        <img src={`/logos/${t.logoFile}`} alt={t.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: 6 }} onError={e => { const img = e.target as HTMLImageElement; img.style.display = 'none'; const sib = img.nextElementSibling as HTMLElement; if (sib) sib.style.display = 'block'; const p = img.parentElement as HTMLElement; if (p) p.style.background = t.color; }} />
+                        <span style={{ position: 'absolute', fontSize: 12, fontWeight: 700, letterSpacing: '-0.02em', color: t.textColor, display: 'none' }}>{t.initials}</span>
+                      </>
+                    ) : (
+                      <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '-0.02em', color: t.textColor }}>{t.initials}</span>
+                    )}
                   </div>
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '-0.01em', marginBottom: 3 }}>{t.name}</div>
