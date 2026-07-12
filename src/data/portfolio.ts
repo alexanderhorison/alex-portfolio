@@ -127,7 +127,7 @@ export const AI_STACK: AiStackItem[] = [
 export const SERVICES: Service[] = [
   { name: "Business Analyst Services", desc: "Map processes & requirements", price: "FREE", free: true, iconKey: "search" },
   { name: "Consulting", desc: "Strategy & technical advice", price: "FREE", free: true, iconKey: "bulb" },
-  { name: "Create & Implement Solutions", desc: "AI, automation & full builds", price: "IDR 2.000K/mo", free: false, iconKey: "send" },
+  { name: "Create & Implement Solutions", desc: "AI, automation & full builds", price: "Start from IDR 3jt/mo", free: false, iconKey: "send" },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
