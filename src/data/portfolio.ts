@@ -113,6 +113,9 @@ export const AI_STACK: AiStackItem[] = [
   { name: "Kiro", tagline: "Spec-driven AI IDE", initials: "Ki", color: "#FF9900", textColor: "#fff" },
   { name: "9 Router", tagline: "AI model routing", initials: "9R", color: "#6366F1", textColor: "#fff" },
   { name: "Paperclip", tagline: "AI agent platform", initials: "PC", color: "#1C1C1C", textColor: "#A3E635" },
+  { name: "OpenClaw", tagline: "AI automation tool", initials: "OC", color: "#2D2D2D", textColor: "#F97316" },
+  { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff" },
+  { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff" },
 ];
 
 export const SERVICES: Service[] = [
