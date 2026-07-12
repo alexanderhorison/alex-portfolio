@@ -116,6 +116,11 @@ export const AI_STACK: AiStackItem[] = [
   { name: "OpenClaw", tagline: "AI automation tool", initials: "OC", color: "#2D2D2D", textColor: "#F97316" },
   { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff" },
   { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff" },
+  { name: "Portainer", tagline: "Container management", initials: "Po", color: "#13BEF9", textColor: "#0a0a0a" },
+  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff" },
+  { name: "Cloudflare Zero Trust", tagline: "Zero trust network access", initials: "CF", color: "#F38020", textColor: "#fff" },
+  { name: "WAHA", tagline: "WhatsApp HTTP API", initials: "WA", color: "#25D366", textColor: "#fff" },
+  { name: "Metabase", tagline: "Business intelligence", initials: "MB", color: "#509EE3", textColor: "#fff" },
 ];
 
 export const SERVICES: Service[] = [
