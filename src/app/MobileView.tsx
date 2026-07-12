@@ -248,7 +248,7 @@ export function MobileView() {
                 <div key={i} style={{ border: '1px solid hsl(var(--border))', borderRadius: 14, padding: 14, display: 'flex', flexDirection: 'column', gap: 8 }}>
                   <div style={{ width: 40, height: 40, borderRadius: 11, background: t.color, overflow: 'hidden', position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '-0.02em', color: t.textColor }}>{t.initials}</span>
-                    {t.logoFile && <img src={`/logos/${t.logoFile}`} alt={t.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
+                    {t.logoFile && <img src={`/logos/${t.logoFile}`} alt={t.name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'none' }} onLoad={e => { (e.target as HTMLImageElement).style.display = 'block'; }} onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />}
                   </div>
                   <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '-0.01em' }}>{t.name}</div>
                   <div style={{ fontSize: 11, color: muted, lineHeight: 1.3 }}>{t.tagline}</div>
