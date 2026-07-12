@@ -105,22 +105,22 @@ export const LEARNING: LearningItem[] = [
 ];
 
 export const AI_STACK: AiStackItem[] = [
-  { name: "n8n", tagline: "Workflow automation", initials: "n8n", color: "#FF6540", textColor: "#fff", logoFile: "n8n.svg" },
-  { name: "Antigravity", tagline: "AI developer browser", initials: "AG", color: "#0D1117", textColor: "#A78BFA", logoFile: "antigravity.svg" },
-  { name: "Claude Code", tagline: "AI coding assistant", initials: "CC", color: "#D97757", textColor: "#fff", logoFile: "claude-code.svg" },
+  { name: "n8n", tagline: "Workflow automation", initials: "n8n", color: "#FF6540", textColor: "#fff", logoFile: "n8n.png" },
+  { name: "Antigravity", tagline: "AI developer browser", initials: "AG", color: "#0D1117", textColor: "#A78BFA", logoFile: "antigravity.png" },
+  { name: "Claude Code", tagline: "AI coding assistant", initials: "CC", color: "#D97757", textColor: "#fff", logoFile: "claude-code.png" },
   { name: "Retool", tagline: "Internal tools builder", initials: "Re", color: "#F36B24", textColor: "#fff", logoFile: "retool.svg" },
-  { name: "Claude Design", tagline: "AI design studio", initials: "CD", color: "#B87333", textColor: "#fff", logoFile: "claude-design.svg" },
+  { name: "Claude Design", tagline: "AI design studio", initials: "CD", color: "#B87333", textColor: "#fff", logoFile: "claude-design.png" },
   { name: "Gemini", tagline: "Google AI model", initials: "Ge", color: "#4285F4", textColor: "#fff", logoFile: "gemini.svg" },
-  { name: "Kiro", tagline: "Spec-driven AI IDE", initials: "Ki", color: "#FF9900", textColor: "#fff", logoFile: "kiro.svg" },
+  { name: "Kiro", tagline: "Spec-driven AI IDE", initials: "Ki", color: "#FF9900", textColor: "#fff", logoFile: "kiro.png" },
   { name: "9 Router", tagline: "AI model routing", initials: "9R", color: "#6366F1", textColor: "#fff", logoFile: "9router.svg" },
   { name: "Paperclip", tagline: "AI agent platform", initials: "PC", color: "#1C1C1C", textColor: "#A3E635", logoFile: "paperclip.svg" },
   { name: "OpenClaw", tagline: "AI automation tool", initials: "OC", color: "#2D2D2D", textColor: "#F97316", logoFile: "openclaw.svg" },
-  { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff", logoFile: "hermes.svg" },
-  { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff", logoFile: "glideapps.svg" },
-  { name: "Portainer", tagline: "Container management", initials: "Po", color: "#13BEF9", textColor: "#0a0a0a", logoFile: "portainer.svg" },
-  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff", logoFile: "traefik.svg" },
-  { name: "Cloudflare Zero Trust", tagline: "Zero trust network access", initials: "CF", color: "#F38020", textColor: "#fff", logoFile: "cloudflare.svg" },
-  { name: "WAHA", tagline: "WhatsApp HTTP API", initials: "WA", color: "#25D366", textColor: "#fff", logoFile: "waha.svg" },
+  { name: "Hermes", tagline: "AI messaging platform", initials: "He", color: "#7C3AED", textColor: "#fff", logoFile: "hermes.png" },
+  { name: "Glide Apps", tagline: "No-code app builder", initials: "Gl", color: "#6C47FF", textColor: "#fff", logoFile: "glideapps.png" },
+  { name: "Portainer", tagline: "Container management", initials: "Po", color: "#13BEF9", textColor: "#0a0a0a", logoFile: "portainer.png" },
+  { name: "Traefik", tagline: "Cloud-native reverse proxy", initials: "Tr", color: "#24A1C8", textColor: "#fff", logoFile: "traefik.png" },
+  { name: "Cloudflare Zero Trust", tagline: "Zero trust network access", initials: "CF", color: "#F38020", textColor: "#fff", logoFile: "cloudflare-zero-trust.png" },
+  { name: "WAHA", tagline: "WhatsApp HTTP API", initials: "WA", color: "#25D366", textColor: "#fff", logoFile: "waha.png" },
   { name: "Metabase", tagline: "Business intelligence", initials: "MB", color: "#509EE3", textColor: "#fff", logoFile: "metabase.svg" },
 ];
 
