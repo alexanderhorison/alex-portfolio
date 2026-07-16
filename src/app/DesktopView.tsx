@@ -364,7 +364,7 @@ export function DesktopView() {
           <div className="axw-wrap">
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'hsl(var(--brand))', marginBottom: 8 }}>About</div>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 18px' }}>13 years turning operations into products</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, maxWidth: 760, margin: '0 0 8px' }}>Hey, I&apos;m Alexander — a Web Developer, Project Manager, and Systems Designer with over 10 years of experience. I&apos;m passionate about building smart digital tools that help businesses grow and run better.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.65, maxWidth: 760, margin: '0 0 8px' }}>Hey, I&apos;m Alexander — a Web Developer, Project Manager, and Systems Designer with 13+ years of experience. I&apos;m passionate about building smart digital tools that help businesses grow and run better.</p>
             <p style={{ fontSize: 16, lineHeight: 1.65, maxWidth: 760, color: 'hsl(var(--muted-foreground))', margin: '0 0 30px' }}>I create apps and websites that streamline operations, improve user experience, and showcase brands in the best light. At the heart of it, I help companies evolve digitally and work more efficiently.</p>
 
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'hsl(var(--muted-foreground))', marginBottom: 12 }}>Tools I work with</div>
