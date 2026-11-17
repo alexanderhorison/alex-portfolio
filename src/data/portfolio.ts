@@ -97,7 +97,7 @@ export const ICONS: Record<string, PathData[]> = {
 export const TOOLS = [
   "Claude", "ChatGPT", "Cursor", "n8n",
   "React.js", "Next.js", "Node.js", "NestJS", "Laravel", "Java Spring Boot",
-  "PostgreSQL", "MySQL", "Supabase", "Redis", "RabbitMQ", "Docker", "Vercel",
+  "PostgreSQL", "MySQL", "Supabase", "Redis", "RabbitMQ", "AWS", "Google Cloud", "Docker", "Vercel",
   "Webflow", "Framer", "Shopify", "WordPress", "SharePoint",
   "Retool", "Glide apps", "Bubble", "Filament",
   "Figma", "Jira", "Confluence", "Slack", "VS Code",
