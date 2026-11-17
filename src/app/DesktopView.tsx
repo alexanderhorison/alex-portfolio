@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Icon } from '@/components/Icon';
 import {
   PROJECTS, ICONS, AI_STACK, TOOLS, EXPERIENCE, EDUCATION,
-  LEARNING, SERVICES, TESTIMONIALS, CONTACT,
+  LEARNING, SERVICES, TESTIMONIALS, CONTACT, ACHIEVEMENTS,
 } from '@/data/portfolio';
 
 type Section = 'home' | 'work' | 'about' | 'contact';
@@ -384,6 +384,22 @@ export function DesktopView() {
                   </div>
                   <div style={{ fontSize: 13, color: 'hsl(var(--brand))', fontWeight: 500, marginBottom: 8 }}>{e.company} · {e.period}</div>
                   <p style={{ fontSize: 13, lineHeight: 1.55, color: 'hsl(var(--muted-foreground))', margin: 0 }}>{e.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'hsl(var(--muted-foreground))', marginBottom: 12 }}>Achievements</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: 14, marginBottom: 30 }}>
+              {ACHIEVEMENTS.map((a, i) => (
+                <div key={i} className="wa-card wa-card--pad" style={{ display: 'flex', alignItems: 'center', gap: 13, background: 'hsl(var(--background))', padding: '16px 18px' }}>
+                  <span className="wa-avatar wa-avatar--md" style={{ background: 'hsl(var(--brand) / .1)', color: 'hsl(var(--brand))', flexShrink: 0 }}>
+                    <Icon paths={ICONS[a.iconKey] ?? []} size={18} />
+                  </span>
+                  <div>
+                    <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{a.value}</div>
+                    <div style={{ fontSize: 13, fontWeight: 600, marginTop: 3 }}>{a.label}</div>
+                    <div style={{ fontSize: 12, color: 'hsl(var(--muted-foreground))', marginTop: 1 }}>{a.sub}</div>
+                  </div>
                 </div>
               ))}
             </div>

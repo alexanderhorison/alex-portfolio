@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { Icon } from '@/components/Icon';
 import {
   PROJECTS, ICONS, AI_STACK, TOOLS, EXPERIENCE, EDUCATION, LEARNING,
-  SERVICES, TESTIMONIALS, CONTACT,
+  SERVICES, TESTIMONIALS, CONTACT, ACHIEVEMENTS,
 } from '@/data/portfolio';
 
 type Tab = 'home' | 'work' | 'about' | 'contact';
@@ -302,6 +302,21 @@ export function MobileView() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            <h2 style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: muted, margin: '0 0 12px' }}>Achievements</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 26 }}>
+              {ACHIEVEMENTS.map((a, i) => (
+                <div key={i} className="wa-row">
+                  <div className="wa-row__lead" style={{ background: 'hsl(var(--brand)/0.1)', color: brand }}>
+                    <Icon paths={ICONS[a.iconKey] ?? []} size={18} />
+                  </div>
+                  <div className="wa-row__body">
+                    <p className="wa-row__title"><strong style={{ fontWeight: 700 }}>{a.value}</strong> {a.label}</p>
+                    <p className="wa-row__meta">{a.sub}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <h2 style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: muted, margin: '0 0 12px' }}>Education</h2>
