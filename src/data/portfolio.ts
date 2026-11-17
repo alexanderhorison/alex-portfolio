@@ -29,6 +29,13 @@ export interface Experience {
   desc: string;
 }
 
+export interface Achievement {
+  value: string;
+  label: string;
+  sub: string;
+  iconKey: string;
+}
+
 export interface AiStackItem {
   name: string;
   tagline: string;
@@ -83,17 +90,36 @@ export const ICONS: Record<string, PathData[]> = {
   workflow: ["M3 5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", "M7 11v4a2 2 0 0 0 2 2h4", "M13 15a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"],
   code: ["m16 18 6-6-6-6", "m8 6-6 6 6 6"],
   cloud: ["M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"],
+  trophy: ["M6 9H4.5a2.5 2.5 0 0 1 0-5H6", "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", "M4 22h16", "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", "M18 2H6v7a6 6 0 0 0 12 0V2Z"],
+  users: ["M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", [9, 7, 4], "M22 21v-2a4 4 0 0 0-3-3.87", "M16 3.13a4 4 0 0 1 0 7.75"],
 };
 
-export const TOOLS = ["Claude", "ChatGPT", "Cursor", "n8n", "Figma", "Framer", "Webflow", "Retool", "Filament", "Glide apps", "Jira", "Confluence", "Slack", "WordPress", "VS Code"];
+export const TOOLS = [
+  "Claude", "ChatGPT", "Cursor", "n8n",
+  "React.js", "Next.js", "Node.js", "NestJS", "Laravel", "Java Spring Boot",
+  "PostgreSQL", "MySQL", "Supabase", "Redis", "RabbitMQ", "Docker", "Vercel",
+  "Webflow", "Framer", "Shopify", "WordPress", "SharePoint",
+  "Retool", "Glide apps", "Bubble", "Filament",
+  "Figma", "Jira", "Confluence", "Slack", "VS Code",
+];
 
 export const EXPERIENCE: Experience[] = [
-  { title: "Engineering Manager", company: "Bithealth", period: "Mar 2023 – Present", current: true, desc: "Lead and manage 30+ engineers across product and platform delivery. Shipped 20+ internal tools and automation systems — including invoice reconciliation, pharmacy reconciliation, PDF generation, timesheet automation, and Jira auditing — saving over 100 person-hours per month across finance, HR, and operations." },
-  { title: "IT Operation Manager", company: "Halosis", period: "Sep 2020 – Mar 2023", current: false, desc: "Owned client product operations and led development of a WhatsApp social-commerce platform from scratch — business processes, engineering, and implementation — serving 20+ small business clients processing 200–300 transactions per month." },
-  { title: "Head of Technology", company: "Snapinn Global Asia", period: "May 2018 – Sep 2020", current: false, desc: "Led a 10-person engineering team building a property rental platform from the ground up — reaching 200+ active listings and 30 monthly bookings, partnering with design and business across the full product lifecycle." },
-  { title: "Co-Founder", company: "Homecare24.id", period: "May 2017 – Apr 2018", current: false, desc: "Co-founded and built the full technology stack from scratch — mobile app, web platform, and healthcare marketplace — growing to 100+ healthcare providers on the platform." },
+  { title: "Engineering Manager", company: "Bithealth", period: "Mar 2023 – Present", current: true, desc: "Lead 30+ engineers and manage 6–8 concurrent client and internal projects, including systems for major hospital groups — from presales, requirements and proposals through UAT and go-live. Shaped a hardware + software partnership with a global vendor for smart-hospital solutions. Shipped 20+ internal tools — invoice and pharmacy reconciliation, PDF generation, timesheet automation and Jira auditing — saving 100+ person-hours a month." },
+  { title: "IT Operation Manager", company: "Halosis", period: "May 2022 – Mar 2023", current: false, desc: "Owned product operations for 20+ small business clients processing 200–300 transactions a month. Ran product brainstorming with stakeholders and the board, and grew the team through hiring and onboarding." },
+  { title: "Web Development Team Lead", company: "Halosis", period: "Sep 2020 – May 2022", current: false, desc: "Led developers, QA and UI/UX designers to build a WhatsApp Business API social-commerce platform from scratch — business processes, engineering and implementation — delivering features on schedule and feeding client feedback into each release." },
+  { title: "Head of Technology", company: "Snapinn Global Asia", period: "May 2018 – Sep 2020", current: false, desc: "Led a 10-person engineering team building a property rental website and mobile apps from the ground up — secure payments and real-time calendar sync, reaching 200+ active listings and 30 monthly bookings. Revamped the existing apps with UI/UX vendors." },
+  { title: "Co-Founder & IT Manager", company: "Homecare24.id", period: "May 2017 – Apr 2018", current: false, desc: "Built the full technology stack as part of the founding team — mobile app, web platform and healthcare marketplace — growing to 100+ healthcare providers. Pitched to the board and investors to fund expansion." },
   { title: "Java Developer", company: "Global Pay Indonesia", period: "Sep 2016 – Apr 2017", current: false, desc: "Built the Uangku e-money website and backend payment request APIs, supporting 100+ monthly transactions for an Indonesian fintech platform." },
   { title: "Website Developer", company: "Rumah123.com", period: "Jan 2015 – Sep 2016", current: false, desc: "Developed and maintained features across frontend and backend APIs for Rumah123.com — one of Indonesia's largest property portals — contributing to both the consumer website and the APIs powering web and mobile." },
+];
+
+export const ACHIEVEMENTS: Achievement[] = [
+  { value: "80%+", label: "Finance & HR productivity gain", sub: "Through automation at Bithealth", iconKey: "trending" },
+  { value: "100+", label: "Person-hours saved per month", sub: "From 20+ internal tools", iconKey: "clock" },
+  { value: "24h → 20m", label: "Invoice reconciliation", sub: "Across 50 partner companies", iconKey: "receipt" },
+  { value: "2nd", label: "Bithealth internal AI Competition", sub: "Runner-up", iconKey: "trophy" },
+  { value: "30+", label: "Engineers led", sub: "Across 6–8 concurrent projects", iconKey: "users" },
+  { value: "90%", label: "Faster partner invoicing", sub: "80 PDFs/month, 5 min → 30 sec each", iconKey: "fileText" },
 ];
 
 export const EDUCATION = { school: "Bina Nusantara University", degree: "Bachelor's Degree in Information Technology" };
