@@ -25,6 +25,14 @@ export function DesktopView() {
   const aiWork = PROJECTS.filter(p => p.category === 'ai');
   const sel = PROJECTS.find(p => p.id === selectedId) ?? null;
 
+  // Deep link: ?project=<id> opens that case study (used by links in the CV PDF)
+  useEffect(() => {
+    try {
+      const id = new URLSearchParams(window.location.search).get('project');
+      if (id && PROJECTS.some(p => p.id === id)) setSelectedId(id);
+    } catch {}
+  }, []);
+
   useEffect(() => {
     const ids: Section[] = ['home', 'work', 'about', 'contact'];
     const els = ids.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];

@@ -27,6 +27,14 @@ export function MobileView() {
   const featured = PROJECTS.slice(0, 4);
   const sel = PROJECTS.find(p => p.id === selectedId) ?? null;
 
+  // Deep link: ?project=<id> opens that case study (used by links in the CV PDF)
+  useEffect(() => {
+    try {
+      const id = new URLSearchParams(window.location.search).get('project');
+      if (id && PROJECTS.some(p => p.id === id)) setSelectedId(id);
+    } catch {}
+  }, []);
+
   function go(t: Tab) { setTab(t); setSelectedId(null); window.scrollTo({ top: 0 }); }
 
   function copyEmail() {
