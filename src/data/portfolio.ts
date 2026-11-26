@@ -29,6 +29,13 @@ export interface Experience {
   desc: string;
 }
 
+export interface Achievement {
+  value: string;
+  label: string;
+  sub: string;
+  iconKey: string;
+}
+
 export interface AiStackItem {
   name: string;
   tagline: string;
@@ -83,17 +90,36 @@ export const ICONS: Record<string, PathData[]> = {
   workflow: ["M3 5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", "M7 11v4a2 2 0 0 0 2 2h4", "M13 15a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"],
   code: ["m16 18 6-6-6-6", "m8 6-6 6 6 6"],
   cloud: ["M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"],
+  trophy: ["M6 9H4.5a2.5 2.5 0 0 1 0-5H6", "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", "M4 22h16", "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", "M18 2H6v7a6 6 0 0 0 12 0V2Z"],
+  users: ["M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", [9, 7, 4], "M22 21v-2a4 4 0 0 0-3-3.87", "M16 3.13a4 4 0 0 1 0 7.75"],
 };
 
-export const TOOLS = ["Claude", "ChatGPT", "Cursor", "n8n", "Figma", "Framer", "Webflow", "Retool", "Filament", "Glide apps", "Jira", "Confluence", "Slack", "WordPress", "VS Code"];
+export const TOOLS = [
+  "Claude", "ChatGPT", "Cursor", "n8n",
+  "React.js", "Next.js", "Node.js", "NestJS", "Laravel", "Java Spring Boot",
+  "PostgreSQL", "MySQL", "Supabase", "Redis", "RabbitMQ", "AWS", "Google Cloud", "Docker", "Vercel",
+  "Webflow", "Framer", "Shopify", "WordPress", "SharePoint",
+  "Retool", "Glide apps", "Bubble", "Filament",
+  "Figma", "Jira", "Confluence", "Slack", "VS Code",
+];
 
 export const EXPERIENCE: Experience[] = [
-  { title: "Engineering Manager", company: "Bithealth", period: "Mar 2023 – Present", current: true, desc: "Lead and manage 30+ engineers across product and platform delivery. Shipped 20+ internal tools and automation systems — including invoice reconciliation, pharmacy reconciliation, PDF generation, timesheet automation, and Jira auditing — saving over 100 person-hours per month across finance, HR, and operations." },
-  { title: "IT Operation Manager", company: "Halosis", period: "Sep 2020 – Mar 2023", current: false, desc: "Owned client product operations and led development of a WhatsApp social-commerce platform from scratch — business processes, engineering, and implementation — serving 20+ small business clients processing 200–300 transactions per month." },
-  { title: "Head of Technology", company: "Snapinn Global Asia", period: "May 2018 – Sep 2020", current: false, desc: "Led a 10-person engineering team building a property rental platform from the ground up — reaching 200+ active listings and 30 monthly bookings, partnering with design and business across the full product lifecycle." },
-  { title: "Co-Founder", company: "Homecare24.id", period: "May 2017 – Apr 2018", current: false, desc: "Co-founded and built the full technology stack from scratch — mobile app, web platform, and healthcare marketplace — growing to 100+ healthcare providers on the platform." },
+  { title: "Engineering Manager", company: "Bithealth", period: "Mar 2023 – Present", current: true, desc: "Lead 30+ engineers across 6–8 concurrent client and internal projects. Built and led teams delivering 20+ healthcare system projects for hospitals — from presales, requirements and proposals through UAT and go-live." },
+  { title: "IT Operation Manager", company: "Halosis", period: "May 2022 – Mar 2023", current: false, desc: "Owned product operations for 20+ small business clients processing 200–300 transactions a month. Ran product brainstorming with stakeholders and the board, and grew the team through hiring and onboarding." },
+  { title: "Web Development Team Lead", company: "Halosis", period: "Sep 2020 – May 2022", current: false, desc: "Led developers, QA and UI/UX designers to build a WhatsApp Business API social-commerce platform from scratch — business processes, engineering and implementation — delivering features on schedule and feeding client feedback into each release." },
+  { title: "Head of Technology", company: "Snapinn Global Asia", period: "May 2018 – Sep 2020", current: false, desc: "Led a 10-person engineering team building a property rental website and mobile apps from the ground up — secure payments and real-time calendar sync, reaching 200+ active listings and 30 monthly bookings. Revamped the existing apps with UI/UX vendors." },
+  { title: "Co-Founder & IT Manager", company: "Homecare24.id", period: "May 2017 – Apr 2018", current: false, desc: "Built the full technology stack as part of the founding team — mobile app, web platform and healthcare marketplace — growing to 100+ healthcare providers. Pitched to the board and investors to fund expansion." },
   { title: "Java Developer", company: "Global Pay Indonesia", period: "Sep 2016 – Apr 2017", current: false, desc: "Built the Uangku e-money website and backend payment request APIs, supporting 100+ monthly transactions for an Indonesian fintech platform." },
   { title: "Website Developer", company: "Rumah123.com", period: "Jan 2015 – Sep 2016", current: false, desc: "Developed and maintained features across frontend and backend APIs for Rumah123.com — one of Indonesia's largest property portals — contributing to both the consumer website and the APIs powering web and mobile." },
+];
+
+export const ACHIEVEMENTS: Achievement[] = [
+  { value: "80%+", label: "Finance & HR productivity gain", sub: "Through automation at Bithealth", iconKey: "trending" },
+  { value: "100+", label: "Person-hours saved per month", sub: "From 20+ internal tools", iconKey: "clock" },
+  { value: "24h → 20m", label: "Invoice reconciliation", sub: "Across 50 partner companies", iconKey: "receipt" },
+  { value: "2nd", label: "Bithealth internal AI Competition", sub: "Runner-up", iconKey: "trophy" },
+  { value: "30+", label: "Engineers led", sub: "Across 6–8 concurrent projects", iconKey: "users" },
+  { value: "90%", label: "Faster partner invoicing", sub: "80 PDFs/month, 5 min → 30 sec each", iconKey: "fileText" },
 ];
 
 export const EDUCATION = { school: "Bina Nusantara University", degree: "Bachelor's Degree in Information Technology" };
@@ -174,7 +200,7 @@ export const PROJECTS: Project[] = [
     id: "invoice-reconcile",
     name: "Invoice Reconcile Automation",
     short: "Finance Automation",
-    client: "Bithealth",
+    client: "1ENGAGE",
     period: "2024–Now",
     live: true,
     category: "ai",
@@ -206,7 +232,7 @@ export const PROJECTS: Project[] = [
     live: true,
     category: "product",
     iconKey: "layers",
-    intro: "A comprehensive ERP for Tjahaya Berkat Abadi — a cigarette manufacturing and distribution business. Replaced a standalone Moka POS with a fully integrated system covering inventory, purchase orders, sales orders, point-of-sale, and accounting — all 5 modules live.",
+    intro: "A comprehensive ERP for Tjahaya Berkat Abadi — a cigarette manufacturing and distribution business. Replaced a standalone Moka POS with a fully integrated system covering inventory, purchasing, sales, point-of-sale and accounting — 25–30+ modules live.",
     challenge: [
       "Moka POS only — no inventory, procurement, or finance integration",
       "Complex inventory across units with no central tracking",
@@ -215,10 +241,10 @@ export const PROJECTS: Project[] = [
     solution: [
       "Real-time centralized inventory across all units",
       "Automated purchase & sales orders",
-      "5 modules live: inventory, PO, SO, POS, and accounting",
+      "25–30+ modules live: inventory, PO, SO, POS, accounting and more",
     ],
     results: [
-      "Standalone POS → complete 5-module ERP for 10-person team",
+      "Standalone POS → 25–30+ module ERP for a 10-person team",
       "First unified system across the entire business",
       "Real-time financial & operational visibility",
     ],
@@ -227,6 +253,33 @@ export const PROJECTS: Project[] = [
     quoteBy: "Michael Santoso",
     quoteRole: "Owner, Tjahaya Berkat Abadi",
     quoteInitials: "MS",
+  },
+  {
+    id: "erp-chatbot",
+    name: "ERP Chatbot",
+    short: "WhatsApp AI Agent",
+    client: "Tjahaya Berkat Abadi",
+    period: "2026",
+    live: true,
+    category: "ai",
+    iconKey: "chat",
+    intro: "A WhatsApp AI chatbot connected to Tjahaya Berkat Abadi's ERP — stock, sales, orders and approvals are now checked and actioned in chat, without opening the system. Delivered a 90% productivity gain.",
+    challenge: [
+      "Every check meant logging into the ERP from a laptop",
+      "Approvals and stock questions waited until someone was at a desk",
+      "Operational data locked behind screens and menus",
+    ],
+    solution: [
+      "WhatsApp chatbot powered by Hermes Agent and LLMs",
+      "Connected to the ERP's 25–30+ modules through its APIs",
+      "Plain-language questions: stock, sales, orders, approvals",
+    ],
+    results: [
+      "90% productivity gain",
+      "Daily operations run from WhatsApp — no login needed",
+      "Faster decisions from anywhere",
+    ],
+    conclusion: "Put an entire ERP inside WhatsApp — 90% more productive, with no need to open the system again.",
   },
   {
     id: "pixelwise",
@@ -313,6 +366,60 @@ export const PROJECTS: Project[] = [
     quoteBy: "Jefri Wijaya",
     quoteRole: "Operational Manager, KKHome",
     quoteInitials: "JW",
+  },
+  {
+    id: "single-queue-system",
+    name: "Single Queue Management System",
+    short: "Hospital Patient Flow",
+    client: "Medistra Hospital",
+    period: "2025–Now",
+    live: true,
+    category: "product",
+    iconKey: "users",
+    intro: "A single queue system for Medistra Hospital — one queue number carries each patient from registration to clinic, cashier and pharmacy, with self-service kiosks and wait-time analytics for every station.",
+    challenge: [
+      "A separate queue and number at every counter",
+      "No view of where patients waited longest",
+      "Insured and self-pay patients mixed in the same flow",
+    ],
+    solution: [
+      "One queue across 4 stations: registration, clinic, cashier, pharmacy",
+      "Self-service kiosks and tickets with doctor and patient details",
+      "Wait-time vs service-time analytics per station and payment type",
+    ],
+    results: [
+      "One queue number for the whole patient journey",
+      "Bottlenecks visible station by station",
+      "Enhancements scoped and delivered through change requests",
+    ],
+    conclusion: "Turned four separate hospital queues into one smooth patient journey.",
+  },
+  {
+    id: "rostering-management",
+    name: "Rostering Management System",
+    short: "Hospital Workforce Planning",
+    client: "Hospital Group",
+    period: "Ongoing",
+    live: true,
+    category: "product",
+    iconKey: "calendar",
+    intro: "Staff rostering for a hospital group, from roster planning to realization — shift swaps, staff lending between units, verification and reporting, integrated with the group's data warehouse.",
+    challenge: [
+      "Rosters planned manually across many hospital units",
+      "Shift swaps and staff lending handled by chat and paper",
+      "Planned vs actual hours hard to verify and report",
+    ],
+    solution: [
+      "Roster planning through realization in one system",
+      "Shift swaps and cross-unit staff lending with approvals",
+      "Verification, reporting and data-warehouse integration",
+    ],
+    results: [
+      "Planning to realization tracked end to end",
+      "Phased roadmap from core rostering to analytics",
+      "Workforce data flowing into the data warehouse",
+    ],
+    conclusion: "Brought hospital rostering from plan to reality in one system.",
   },
   {
     id: "auto-invoice-pdf",
@@ -421,6 +528,33 @@ export const PROJECTS: Project[] = [
       "In active daily personal use",
     ],
     conclusion: "A personal PWA that converts Telegram voice messages into scheduled tasks — built and used daily.",
+  },
+  {
+    id: "multi-agent-workspace",
+    name: "Multi-agent AI Workspace",
+    short: "Personal AI Team",
+    client: "Personal Project",
+    period: "2026",
+    live: true,
+    category: "ai",
+    iconKey: "workflow",
+    intro: "My own always-on AI team on a VPS: three coding agents, a life assistant and a finance assistant built on Hermes Agent, routed across Claude, Gemini and ChatGPT through 9Router so work never stalls when one provider hits its limit.",
+    challenge: [
+      "Context lost every time one AI provider's quota ran out",
+      "Coding assistant only available while my laptop was on",
+      "Personal admin and finance tasks scattered across apps",
+    ],
+    solution: [
+      "5 Hermes agents running 24/7 on a VPS (Docker, Cloudflare Zero Trust)",
+      "9Router switches between Claude, Gemini and ChatGPT automatically",
+      "Shared memory, skills and SOUL.md so every agent keeps context",
+    ],
+    results: [
+      "5 agents working 24/7: 3 coders, life and finance",
+      "No stalls when one provider's tokens run out",
+      "Coding work continues while I'm away from my laptop",
+    ],
+    conclusion: "A personal AI team that never sleeps — five specialised agents, one shared memory, any model.",
   },
   {
     id: "lovelo-room",
