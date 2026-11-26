@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://alex-portfolio-eosin.vercel.app"),
   title: "Alexander Horison — AI Builder & Technology Consultant",
   description:
-    "Portfolio of Alexander Horison — AI Builder, Solution Architect, and Technology Consultant with 13+ years of experience building automation, AI tools, and web products.",
+    "Portfolio of Alexander Horison — AI Builder, Solution Architect, and Technology Consultant with 11+ years of experience building automation, AI tools, and web products.",
   applicationName: "Alexander Horison",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Alexander Horison — AI Builder & Technology Consultant",
     description:
-      "AI Builder & Technology Consultant with 13+ years building automation, AI tools, and web products.",
+      "AI Builder & Technology Consultant with 11+ years building automation, AI tools, and web products.",
     type: "website",
   },
 };
