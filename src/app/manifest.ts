@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Alexander Horison — AI Builder & Technology Consultant",
     short_name: "Alexander",
     description:
-      "Portfolio of Alexander Horison — AI Builder, Solution Architect, and Technology Consultant with 13+ years building automation, AI tools, and web products.",
+      "Portfolio of Alexander Horison — AI Builder, Solution Architect, and Technology Consultant with 11+ years building automation, AI tools, and web products.",
     start_url: "/",
     scope: "/",
     display: "standalone",

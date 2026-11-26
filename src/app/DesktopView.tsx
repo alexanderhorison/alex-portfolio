@@ -159,7 +159,7 @@ export function DesktopView() {
                   Hello! I&apos;m Alexander <span style={{ color: 'hsl(var(--brand))' }}>👋</span>
                 </h1>
                 <p style={{ fontSize: 17, lineHeight: 1.6, color: 'hsl(var(--muted-foreground))', margin: '0 0 18px', maxWidth: 540 }}>
-                  I&apos;m an <strong style={{ color: 'hsl(var(--foreground))', fontWeight: 600 }}>AI Builder</strong> and Technology Consultant with <strong style={{ color: 'hsl(var(--foreground))', fontWeight: 600 }}>13+ years</strong> of experience. I design and ship automation, AI-powered tools, and full web products — with a proven track record of building solutions that <strong style={{ color: 'hsl(var(--foreground))', fontWeight: 600 }}>improve productivity</strong> and help businesses run better.
+                  I&apos;m an <strong style={{ color: 'hsl(var(--foreground))', fontWeight: 600 }}>AI Builder</strong> and Technology Consultant with <strong style={{ color: 'hsl(var(--foreground))', fontWeight: 600 }}>11+ years</strong> of experience. I design and ship automation, AI-powered tools, and full web products — with a proven track record of building solutions that <strong style={{ color: 'hsl(var(--foreground))', fontWeight: 600 }}>improve productivity</strong> and help businesses run better.
                 </p>
                 <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                   <a className="wa-btn wa-btn--brand wa-btn--xl" href="#work" style={{ textDecoration: 'none' }}>
@@ -185,7 +185,7 @@ export function DesktopView() {
                 </div>
                 <div style={{ height: 1, background: 'hsl(0 0% 100% / .12)', marginBottom: 20 }} />
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18, marginBottom: 22 }}>
-                  <div><div style={{ fontSize: 26, fontWeight: 700, lineHeight: 1 }}>13+</div><div style={{ fontSize: 12, color: 'hsl(0 0% 62%)', marginTop: 4 }}>Years experience</div></div>
+                  <div><div style={{ fontSize: 26, fontWeight: 700, lineHeight: 1 }}>11+</div><div style={{ fontSize: 12, color: 'hsl(0 0% 62%)', marginTop: 4 }}>Years experience</div></div>
                   <div><div style={{ fontSize: 26, fontWeight: 700, lineHeight: 1 }}>20+</div><div style={{ fontSize: 12, color: 'hsl(0 0% 62%)', marginTop: 4 }}>Projects shipped</div></div>
                 </div>
                 <div style={{ display: 'flex', gap: 10 }}>
@@ -201,7 +201,7 @@ export function DesktopView() {
             {/* Stats */}
             <div className="axw-stats" style={{ marginTop: 48 }}>
               {[
-                { icon: ICONS.calendar, iconBg: 'hsl(var(--brand) / .1)', iconColor: 'hsl(var(--brand))', value: '13+', label: 'Years of experience', sub: 'Building systems since 2011' },
+                { icon: ICONS.calendar, iconBg: 'hsl(var(--brand) / .1)', iconColor: 'hsl(var(--brand))', value: '11+', label: 'Years of experience', sub: 'Building systems since 2015' },
                 { icon: ["M2 7h20v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7Z", "M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"], iconBg: 'hsl(var(--muted))', iconColor: 'hsl(var(--muted-foreground))', value: '20+', label: 'Projects shipped', sub: 'MVPs to enterprise platforms' },
                 { icon: ICONS.send, iconBg: 'hsl(var(--muted))', iconColor: 'hsl(var(--muted-foreground))', value: '8', label: 'AI builds shipped', sub: 'Automation & intelligence tools' },
                 { icon: ICONS.trending, iconBg: 'hsl(var(--muted))', iconColor: 'hsl(var(--muted-foreground))', value: '50%+', label: 'Avg. time saved', sub: 'Measured across client projects' },
@@ -372,7 +372,7 @@ export function DesktopView() {
           <div className="axw-wrap">
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'hsl(var(--brand))', marginBottom: 8 }}>About</div>
             <h2 style={{ fontSize: 30, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 18px' }}>13 years turning operations into products</h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, maxWidth: 760, margin: '0 0 8px' }}>Hey, I&apos;m Alexander — a Web Developer, Project Manager, and Systems Designer with 13+ years of experience. I&apos;m passionate about building smart digital tools that help businesses grow and run better.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.65, maxWidth: 760, margin: '0 0 8px' }}>Hey, I&apos;m Alexander — a Web Developer, Project Manager, and Systems Designer with 11+ years of experience. I&apos;m passionate about building smart digital tools that help businesses grow and run better.</p>
             <p style={{ fontSize: 16, lineHeight: 1.65, maxWidth: 760, color: 'hsl(var(--muted-foreground))', margin: '0 0 30px' }}>I create apps and websites that streamline operations, improve user experience, and showcase brands in the best light. At the heart of it, I help companies evolve digitally and work more efficiently.</p>
 
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'hsl(var(--muted-foreground))', marginBottom: 12 }}>Tools I work with</div>

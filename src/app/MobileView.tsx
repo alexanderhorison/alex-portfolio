@@ -92,7 +92,7 @@ export function MobileView() {
               <Icon paths={ICONS.send} size={12} />
               AI Builder · Automation · Productivity
             </span>
-            <p style={{ fontSize: 14, lineHeight: 1.6, margin: '0 0 18px' }}>I&apos;m an <strong style={{ fontWeight: 600 }}>AI Builder</strong> &amp; Technology Consultant with <strong style={{ fontWeight: 600 }}>13+ years</strong> of experience — building automation, AI tools, and web products with a proven record of improving productivity for the businesses I work with.</p>
+            <p style={{ fontSize: 14, lineHeight: 1.6, margin: '0 0 18px' }}>I&apos;m an <strong style={{ fontWeight: 600 }}>AI Builder</strong> &amp; Technology Consultant with <strong style={{ fontWeight: 600 }}>11+ years</strong> of experience — building automation, AI tools, and web products with a proven record of improving productivity for the businesses I work with.</p>
 
             <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
               <button className="wa-btn wa-btn--brand wa-btn--lg wa-btn--block" onClick={() => go('work')}>
@@ -107,7 +107,7 @@ export function MobileView() {
             {/* Stats grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
               {[
-                { icon: ICONS.calendar, bg: 'hsl(var(--brand)/0.1)', ic: brand, val: '13+', title: 'Years exp.', sub: 'Building since 2011' },
+                { icon: ICONS.calendar, bg: 'hsl(var(--brand)/0.1)', ic: brand, val: '11+', title: 'Years exp.', sub: 'Building since 2015' },
                 { icon: ICONS.bag, bg: 'hsl(var(--muted))', ic: muted, val: '20+', title: 'Projects shipped', sub: 'MVPs to enterprise' },
                 { icon: ICONS.send, bg: 'hsl(var(--muted))', ic: muted, val: '8', title: 'AI builds', sub: 'Automation tools' },
                 { icon: ICONS.trending, bg: 'hsl(var(--muted))', ic: muted, val: '50%+', title: 'Avg. time saved', sub: 'Client outcomes' },
@@ -287,7 +287,7 @@ export function MobileView() {
               </div>
             </div>
 
-            <p style={{ fontSize: 14, lineHeight: 1.65, margin: '18px 0 8px' }}>Hey, I&apos;m Alexander — an <strong style={{ fontWeight: 600 }}>AI Builder</strong>, Solution Architect, and Web Developer with <strong style={{ fontWeight: 600 }}>13+ years</strong> of experience. I build automation and AI-powered tools that help businesses grow and run more efficiently.</p>
+            <p style={{ fontSize: 14, lineHeight: 1.65, margin: '18px 0 8px' }}>Hey, I&apos;m Alexander — an <strong style={{ fontWeight: 600 }}>AI Builder</strong>, Solution Architect, and Web Developer with <strong style={{ fontWeight: 600 }}>11+ years</strong> of experience. I build automation and AI-powered tools that help businesses grow and run more efficiently.</p>
             <p style={{ fontSize: 14, lineHeight: 1.65, margin: '0 0 24px', color: muted }}>I create internal tools, apps, and websites that streamline operations and remove manual, repetitive work — with a proven track record of improving day-to-day productivity.</p>
 
             <h2 style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: muted, margin: '0 0 12px' }}>Tools I work with</h2>
